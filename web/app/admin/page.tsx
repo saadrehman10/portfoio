@@ -5,7 +5,7 @@ import { isAdminSession } from "@/lib/admin-auth";
 
 export const instant = false;
 
-export const metadata = { title: "Admin | Zubair" };
+export const metadata = { title: "Admin | Saad" };
 
 export default async function AdminLoginPage() {
   if (await isAdminSession()) {

@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # Deploy latest origin/production on this host and restart PM2.
 # Used by GitHub Actions (.github/workflows/deploy-production.yml).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 WEB="$ROOT/web"
-PM2_APP="${PM2_APP:-Zubair-portfolio}"
+PM2_APP="${PM2_APP:-Saad-portfolio}"
 BRANCH="${DEPLOY_BRANCH:-production}"
 LOG="${ROOT}/scripts/last-deploy.log"
 
@@ -43,4 +43,4 @@ sleep 2
 curl -fsS -o /dev/null -w "HTTP %{http_code}\n" "http://127.0.0.1:3001/"
 
 echo "==> $(date -Is) Deploy complete"
-pm2 list | grep -E "Zubair|name" || pm2 list
+pm2 list | grep -E "Saad|name" || pm2 list

@@ -14,7 +14,7 @@ export type ModelViewerEnvironment = "studio" | "city" | "sunset" | "warehouse" 
 
 export const HDRI_EXTENSIONS = [".hdr", ".exr"] as const;
 
-export const DEFAULT_VIEWER_BACKGROUND = "#e7e0d2";
+export const DEFAULT_VIEWER_BACKGROUND = "#0f1115";
 
 /** Public asset path only — blocks open redirects and arbitrary URLs. */
 export function sanitizeViewerModelSrc(value: unknown): string {

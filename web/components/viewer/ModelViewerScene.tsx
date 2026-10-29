@@ -65,11 +65,11 @@ function PlaceholderMesh({
     <group ref={group}>
       <mesh castShadow receiveShadow>
         <torusKnotGeometry args={[0.55, 0.18, 200, 32]} />
-        <meshStandardMaterial color="#d6456a" metalness={0.35} roughness={0.4} />
+        <meshStandardMaterial color="#5b8cff" metalness={0.35} roughness={0.4} />
       </mesh>
       <mesh position={[0, -0.85, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <circleGeometry args={[1.4, 48]} />
-        <meshStandardMaterial color="#e7e0d2" roughness={0.9} />
+        <meshStandardMaterial color="#242832" roughness={0.9} />
       </mesh>
     </group>
   );

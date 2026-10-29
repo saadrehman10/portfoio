@@ -51,11 +51,11 @@ function FooterMarkup({ global }: { global: GlobalSiteSettings }) {
         </div>
 
         <p className="site-footer-signature" aria-hidden={false}>
-          Zubair Ali
+          Saad ur Rehman
         </p>
 
         <div className="site-footer-bar">
-          <p className="site-footer-copy">© {year} Zubair Ali. All rights reserved.</p>
+          <p className="site-footer-copy">© {year} Saad ur Rehman. All rights reserved.</p>
           <p className="site-footer-tagline">{global.footerTagline}</p>
           <a className="site-footer-top" href="#top">
             Back to Top

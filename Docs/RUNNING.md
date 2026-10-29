@@ -1,4 +1,4 @@
-# Running rules — Zubair portfolio (`web/`)
+﻿# Running rules — Saad portfolio (`web/`)
 
 ## Device lock (this machine)
 
@@ -9,7 +9,7 @@
 | MAC address | `88:51:fb:3f:25:03` |
 | Port | **`3001`** (always on this device) |
 | Local URL | http://localhost:3001 |
-| PM2 process name | **`Zubair-portfolio`** |
+| PM2 process name | **`Saad-portfolio`** |
 
 Verify MAC:
 
@@ -19,24 +19,24 @@ cat /sys/class/net/eno1/address
 
 ## PM2 (preferred on this server)
 
-App directory: `/mnt/1TB-EXT/ZubairPortfolio/freelance-portfolio/web`  
+App directory: `/mnt/1TB-EXT/SaadPortfolio/freelance-portfolio/web`  
 Config: `web/ecosystem.config.cjs`
 
 | PM2 name | Role |
 |----------|------|
-| `Zubair-portfolio` | Next.js production server on port **3001** |
-| `Zubair-portfolio-tunnel` | Cloudflare Tunnel (`cloudflared`) — tunnel ID `ae1e0594-014a-4761-aec1-17cfc90139ba` |
+| `Saad-portfolio` | Next.js production server on port **3001** |
+| `Saad-portfolio-tunnel` | Cloudflare Tunnel (`cloudflared`) — tunnel ID `ae1e0594-014a-4761-aec1-17cfc90139ba` |
 
 ### First-time / after dependency or code changes
 
 ```bash
-cd /mnt/1TB-EXT/ZubairPortfolio/freelance-portfolio/web
+cd /mnt/1TB-EXT/SaadPortfolio/freelance-portfolio/web
 npm ci
 npm run prepare-assets
 npm run build
 pm2 start ecosystem.config.cjs
 # or restart if already registered:
-pm2 restart Zubair-portfolio
+pm2 restart Saad-portfolio
 pm2 save
 ```
 
@@ -49,24 +49,24 @@ Token lives **outside the repo** (do not commit it):
 Starter script: `scripts/start-cloudflare-tunnel.sh`
 
 ```bash
-pm2 start scripts/start-cloudflare-tunnel.sh --name Zubair-portfolio-tunnel --interpreter bash
+pm2 start scripts/start-cloudflare-tunnel.sh --name Saad-portfolio-tunnel --interpreter bash
 pm2 save
-pm2 logs Zubair-portfolio-tunnel
+pm2 logs Saad-portfolio-tunnel
 ```
 
 In Cloudflare Zero Trust, the tunnel’s public hostname must point at **`http://localhost:3001`** (or this machine’s LAN IP + 3001).
 
-> Note: this host already runs a system `cloudflared.service`. Do **not** run `sudo cloudflared service install <token>` for Zubair — that overwrites the shared system tunnel. Use the dedicated PM2 process above instead.
+> Note: this host already runs a system `cloudflared.service`. Do **not** run `sudo cloudflared service install <token>` for Saad — that overwrites the shared system tunnel. Use the dedicated PM2 process above instead.
 
 ### Daily ops
 
 ```bash
 pm2 list
-pm2 logs Zubair-portfolio
-pm2 logs Zubair-portfolio-tunnel
-pm2 restart Zubair-portfolio
-pm2 restart Zubair-portfolio-tunnel
-pm2 stop Zubair-portfolio
+pm2 logs Saad-portfolio
+pm2 logs Saad-portfolio-tunnel
+pm2 restart Saad-portfolio
+pm2 restart Saad-portfolio-tunnel
+pm2 stop Saad-portfolio
 ```
 
 After reboot, processes come back from `pm2 save` / startup if configured (`pm2 startup`).
@@ -80,7 +80,7 @@ On every push to **`production`** (or manual **Run workflow**), GitHub calls `PO
 1. `git fetch` + hard reset to `origin/production`
 2. `npm ci` in `web/`
 3. `npm run prepare-assets` + `npm run build`
-4. `pm2 restart Zubair-portfolio`
+4. `pm2 restart Saad-portfolio`
 
 Deploy script: `scripts/deploy-production.sh`
 
@@ -98,17 +98,17 @@ gh secret set DEPLOY_HOOK_URL --repo zubair-ali90/freelance-portfolio \
 
 ### Local fallback watcher
 
-PM2 **`Zubair-portfolio-watch`** polls GitHub every 60s and runs the same deploy when `production` moves (works even if Actions cannot reach the server).
+PM2 **`Saad-portfolio-watch`** polls GitHub every 60s and runs the same deploy when `production` moves (works even if Actions cannot reach the server).
 
 ```bash
-/mnt/1TB-EXT/ZubairPortfolio/freelance-portfolio/scripts/deploy-production.sh
+/mnt/1TB-EXT/SaadPortfolio/freelance-portfolio/scripts/deploy-production.sh
 ```
 
 
 ## Manual (without PM2)
 
 ```bash
-cd /mnt/1TB-EXT/ZubairPortfolio/freelance-portfolio/web
+cd /mnt/1TB-EXT/SaadPortfolio/freelance-portfolio/web
 npm run prepare-assets && npm run build
 npx next start -p 3001 -H 0.0.0.0
 ```

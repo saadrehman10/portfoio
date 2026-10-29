@@ -5,6 +5,8 @@ import {
   processSteps,
 } from "@/lib/homepage-content";
 import { UPWORK_PROFILE_URL } from "@/lib/site-links";
+import type { ThemeColors, ThemePresetId } from "@/lib/themes";
+import { DEFAULT_THEME_PRESET, getPreset } from "@/lib/themes";
 
 export type FeaturedProjectPlacement = {
   slug: string;
@@ -85,6 +87,10 @@ export type GlobalSiteSettings = {
   footerDescription: string;
   footerTagline: string;
   siteTitle: string;
+  /** Active theme preset, or `custom` when using themeColors fully. */
+  themePreset: ThemePresetId;
+  /** Color tokens — used when themePreset is `custom`, or as overrides snapshot. */
+  themeColors: ThemeColors;
 };
 
 export type AboutPageStore = {
@@ -130,7 +136,7 @@ export function buildDefaultPages(): PagesStore {
       eyebrow: "about",
       headline: "a one-person studio for pictures that have to move.",
       intro:
-        "Zubair makes 3D and motion for product brands, apps, and small studios. The work on this site is dummy layout content so the design can be reviewed before real projects go in.",
+        "Saad makes 3D and motion for product brands, apps, and small studios. The work on this site is dummy layout content so the design can be reviewed before real projects go in.",
       startTitle: "How jobs start",
       startBody:
         "A short brief, two references, and the place the file will live. That is enough to price a first round.",
@@ -188,7 +194,7 @@ export function buildDefaultPages(): PagesStore {
 export function buildDefaultHomepage(): HomepageStore {
   return {
     hero: {
-      eyebrow: "Zubair Ali / 3D Artist & Interactive Developer",
+      eyebrow: "Saad ur Rehman / 3D Artist & Interactive Developer",
       headline: "3D that goes beyond the render.",
       description:
         "I create product visuals, character animation, immersive spaces, and interactive 3D experiences—helping brands and teams turn ideas into something people can see, understand, and explore.",
@@ -231,7 +237,7 @@ export function buildDefaultHomepage(): HomepageStore {
       eyebrow: "Behind the Work / 06",
       title: "One creative partner. From concept to delivery.",
       paragraph1:
-        "I'm Zubair Ali, a 3D artist and interactive developer working across product visualization, animation, digital environments, and real-time experiences.",
+        "I'm Saad ur Rehman, a 3D artist and interactive developer working across product visualization, animation, digital environments, and real-time experiences.",
       paragraph2:
         "I enjoy combining visual craftsmanship with technical problem-solving to create work that is not only beautiful but genuinely useful.",
       ctaLabel: "More About Me",
@@ -252,13 +258,16 @@ export function buildDefaultHomepage(): HomepageStore {
 }
 
 export function buildDefaultGlobal(): GlobalSiteSettings {
+  const themePreset = DEFAULT_THEME_PRESET;
   return {
     upworkUrl: UPWORK_PROFILE_URL,
-    footerLabel: "Zubair Ali / Independent Creative",
+    footerLabel: "Saad ur Rehman / Independent Creative",
     footerHeadline: "Ideas deserve dimension.",
     footerDescription:
       "I create 3D visuals, animation, and interactive experiences that turn ambitious ideas into something people can see, feel, and explore.",
     footerTagline: "Made with imagination. Built with precision.",
-    siteTitle: "Zubair Ali | 3D Artist & Interactive Developer",
+    siteTitle: "Saad ur Rehman | 3D Artist & Interactive Developer",
+    themePreset,
+    themeColors: { ...getPreset(themePreset).colors },
   };
 }

@@ -1,6 +1,6 @@
-# CURSOR AGENT — WORK PAGE, PROJECT CASE STUDIES & ADMIN CONFIGURATOR REDESIGN
+﻿# CURSOR AGENT — WORK PAGE, PROJECT CASE STUDIES & ADMIN CONFIGURATOR REDESIGN
 
-**Project**: Zubair Ali personal 3D and interactive development portfolio  
+**Project**: Saad ur Rehman personal 3D and interactive development portfolio  
 **Public website**: https://zubarirali.3dverse.io/  
 **Work page**: https://zubarirali.3dverse.io/work  
 **Admin entry**: https://zubarirali.3dverse.io/admin  
@@ -12,7 +12,7 @@
 
 Act as a principal frontend/full-stack engineer, creative portfolio art director, interaction designer, and CMS architect. **Implement** a high-quality Work collection page, visually excellent individual case-study pages, and a secure, configurable admin system for managing the taxonomy, work ordering, project page layouts, real assets, and verified client testimonials.
 
-The business goal is to make potential clients **experience the work first, understand the scope second, trust the execution third, and contact Zubair naturally**. This is a freelance portfolio, not an agency SaaS dashboard. The **work and media are the heroes**, not abstract visual decoration.
+The business goal is to make potential clients **experience the work first, understand the scope second, trust the execution third, and contact Saad naturally**. This is a freelance portfolio, not an agency SaaS dashboard. The **work and media are the heroes**, not abstract visual decoration.
 
 ## Evidence and limits
 

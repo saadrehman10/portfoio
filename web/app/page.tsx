@@ -15,7 +15,7 @@ export const instant = false;
 export async function generateMetadata(): Promise<Metadata> {
   const config = await readSiteConfig();
   return {
-    title: config.global.siteTitle || "Zubair Ali | 3D Artist & Interactive Developer",
+    title: config.global.siteTitle || "Saad ur Rehman | 3D Artist & Interactive Developer",
     description:
       "Freelance 3D artist and interactive developer — product CGI, character animation, immersive spaces, configurators, and AR. Hire on Upwork.",
   };

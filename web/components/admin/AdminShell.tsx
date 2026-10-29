@@ -40,7 +40,7 @@ export function AdminShell({
     <div className="admin-shell admin-shell-top">
       <header className="admin-topbar">
         <div className="admin-topbar-brand">
-          <p className="admin-brand">Zubair Portfolio Admin</p>
+          <p className="admin-brand">Saad Portfolio Admin</p>
           <p className={`admin-status-pill ${hasDraft ? "is-draft" : "is-live"}`}>
             {hasDraft ? "Unpublished draft" : "All changes published"}
           </p>

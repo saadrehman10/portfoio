@@ -3,7 +3,7 @@ import { readSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
 
-export const metadata = { title: "Contact | Zubair" };
+export const metadata = { title: "Contact | Saad" };
 
 export default async function ContactPage() {
   const config = await readSiteConfig();

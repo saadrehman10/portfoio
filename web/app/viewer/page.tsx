@@ -5,7 +5,7 @@ import { readSiteConfig } from "@/lib/site-config";
 export const instant = false;
 
 export const metadata = {
-  title: "3D viewer | Zubair",
+  title: "3D viewer | Saad",
   robots: { index: false, follow: false },
 };
 

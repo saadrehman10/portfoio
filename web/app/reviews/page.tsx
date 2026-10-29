@@ -5,7 +5,7 @@ import { readSiteConfig } from "@/lib/site-config";
 export const instant = false;
 
 export const metadata = {
-  title: "Client Feedback | Zubair Ali",
+  title: "Client Feedback | Saad ur Rehman",
   description: "Verified Upwork client feedback transcribed from studio records.",
 };
 

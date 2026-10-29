@@ -2,7 +2,7 @@ import { readSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
 
-export const metadata = { title: "Services | Zubair" };
+export const metadata = { title: "Services | Saad" };
 
 export default async function ServicesPage() {
   const { pages } = await readSiteConfig();

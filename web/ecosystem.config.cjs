@@ -1,5 +1,5 @@
 /**
- * PM2 ecosystem for Zubair portfolio on techversol-server.
+ * PM2 ecosystem for Saad portfolio on techversol-server.
  * Device: eno1 MAC 88:51:fb:3f:25:03 — always port 3001.
  *
  * Secrets live in `.env.local` (gitignored). The start script sources them.
@@ -12,8 +12,8 @@
 module.exports = {
   apps: [
     {
-      name: "Zubair-portfolio",
-      cwd: "/mnt/1TB-EXT/ZubairPortfolio/freelance-portfolio/web",
+      name: "Saad-portfolio",
+      cwd: "/mnt/1TB-EXT/SaadPortfolio/freelance-portfolio/web",
       script: "scripts/pm2-start.sh",
       interpreter: "bash",
       instances: 1,

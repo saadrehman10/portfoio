@@ -20,6 +20,12 @@ import {
   sanitizeViewerModelSrc,
 } from "./model-viewer";
 import { sanitizeViewerAnimationLoop } from "./viewer-animation";
+import {
+  getPreset,
+  resolveThemeColors,
+  sanitizeThemeColors,
+  sanitizeThemePresetId,
+} from "./themes";
 import type { OrderedToggle, SiteConfigStore, ResolvedWorkGroup } from "./site-config-types";
 
 export type { OrderedToggle, SiteConfigStore, ResolvedWorkGroup } from "./site-config-types";
@@ -217,6 +223,26 @@ function mergeWorkPage(partial: Partial<WorkPageStore> | undefined): WorkPageSto
   };
 }
 
+function mergeGlobal(partial: Partial<GlobalSiteSettings> | undefined): GlobalSiteSettings {
+  const defaults = buildDefaultGlobal();
+  if (!partial) return defaults;
+  const themePreset = sanitizeThemePresetId(partial.themePreset);
+  const baseColors =
+    themePreset === "custom"
+      ? getPreset("tech-slate").colors
+      : getPreset(themePreset).colors;
+  const themeColors =
+    themePreset === "custom"
+      ? sanitizeThemeColors(partial.themeColors, baseColors)
+      : resolveThemeColors(themePreset);
+  return {
+    ...defaults,
+    ...partial,
+    themePreset,
+    themeColors,
+  };
+}
+
 export function normalizeSiteConfig(partial: unknown): SiteConfigStore {
   const defaults = buildDefaultSiteConfig();
   if (!partial || typeof partial !== "object") return defaults;
@@ -245,7 +271,7 @@ export function normalizeSiteConfig(partial: unknown): SiteConfigStore {
         ? raw.reviews!.hiddenIds.map(String)
         : [],
     },
-    global: { ...defaults.global, ...raw.global },
+    global: mergeGlobal(raw.global),
     updatedAt: typeof raw.updatedAt === "string" ? raw.updatedAt : undefined,
   };
 }

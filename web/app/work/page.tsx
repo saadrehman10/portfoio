@@ -5,7 +5,7 @@ import { readSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
 
-export const metadata = { title: "Work | Zubair" };
+export const metadata = { title: "Work | Saad" };
 
 export default async function WorkPage() {
   const [projects, layout, config] = await Promise.all([

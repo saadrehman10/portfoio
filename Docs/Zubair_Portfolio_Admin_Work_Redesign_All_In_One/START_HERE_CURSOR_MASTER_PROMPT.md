@@ -1,8 +1,8 @@
-# CURSOR MASTER PROMPT — ZUBAIR PORTFOLIO WORK + ADMIN CMS, V2
+﻿# CURSOR MASTER PROMPT — ZUBAIR PORTFOLIO WORK + ADMIN CMS, V2
 
 **Paste this entire prompt into Cursor Agent mode with this folder available in the existing portfolio repository.**
 
-Act as a principal full-stack architect, senior React/Next.js developer, creative UI designer, CMS engineer, and accessibility/performance specialist. Your task is to audit and upgrade the **real existing implementation** of Zubair Ali's portfolio, with special focus on:
+Act as a principal full-stack architect, senior React/Next.js developer, creative UI designer, CMS engineer, and accessibility/performance specialist. Your task is to audit and upgrade the **real existing implementation** of Saad ur Rehman's portfolio, with special focus on:
 
 - `https://zubarirali.3dverse.io/admin/configuration`
 - `https://zubarirali.3dverse.io/admin/projects`

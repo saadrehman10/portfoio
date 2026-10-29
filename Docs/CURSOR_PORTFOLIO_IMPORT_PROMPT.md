@@ -1,4 +1,4 @@
-# CURSOR AGENT TASK — Integrate Zubair Ali's Verified Source Projects and Reviews
+﻿# CURSOR AGENT TASK — Integrate Saad ur Rehman's Verified Source Projects and Reviews
 
 ## Objective
 
@@ -403,29 +403,29 @@ After coding:
 ## r01 — Renders for ballroom
 - **Associated project:** `creative-group-events`
 - **Rating:** 5.0/5 | **Date range:** Sep 25, 2026 – Oct 19, 2026 | **Source screenshot:** image1.png
-- **Client review text:** “I had a fabulous experience working with Zubair! He delivered high quality photo realistic renderings with a quick turn around. I really appreciate how he accepts feedback and makes changes quickly!”
+- **Client review text:** “I had a fabulous experience working with Saad! He delivered high quality photo realistic renderings with a quick turn around. I really appreciate how he accepts feedback and makes changes quickly!”
 
 ## r02 — 3D Render Artist for Event Concepts
 - **Associated project:** `creative-group-events`
 - **Rating:** 5.0/5 | **Date range:** Dec 7, 2025 – May 29, 2026 | **Source screenshot:** image2.png
-- **Client review text:** “Working with Zubair was easy, and he was able to provide timely updates and revisions - he did great!”
+- **Client review text:** “Working with Saad was easy, and he was able to provide timely updates and revisions - he did great!”
 
 ## r03 — Hyper Realistic Full Body Rigging
 - **Associated project:** `stylized-fox-vrm`
 - **Rating:** 5.0/5 | **Date range:** Sep 7, 2026 – Oct 6, 2026 | **Source screenshot:** image3.png
-- **Client review text:** “Zubair did an incredible job with the full body rigging project! The quality of work was outstanding, and everything was completed successfully and on schedule. Communication was smooth throughout the entire process, making it a truly great experience. I highly recommend Zubair for any rigging needs and look forward to working together again in the future!”
+- **Client review text:** “Saad did an incredible job with the full body rigging project! The quality of work was outstanding, and everything was completed successfully and on schedule. Communication was smooth throughout the entire process, making it a truly great experience. I highly recommend Saad for any rigging needs and look forward to working together again in the future!”
 - **Note:** Screenshot says 5.0 of 2 reviews but only one review is shown.
 
 ## r04 — Seeking Blender Designer to Automate e-Commerce Product Rendering Creation
 - **Associated project:** `zaffiri-precision`
 - **Rating:** 5.0/5 | **Date range:** Jul 30, 2026 – Sep 28, 2026 | **Source screenshot:** image4.png
-- **Client review text:** “Zubair has great communication and performs his tasks thoroughly and expeditiously without too much direction required.”
+- **Client review text:** “Saad has great communication and performs his tasks thoroughly and expeditiously without too much direction required.”
 - **Note:** Top review of two shown in image4.
 
 ## r05 — Seeking Blender Designer to Automate e-Commerce Product Rendering Creation
 - **Associated project:** `zaffiri-precision`
 - **Rating:** 5.0/5 | **Date range:** Jul 10, 2026 – Jul 29, 2026 | **Source screenshot:** image4.png
-- **Client review text:** “Zubair quickly understood the project’s needs and executed efficiently.”
+- **Client review text:** “Saad quickly understood the project’s needs and executed efficiently.”
 - **Note:** Bottom review of two shown in image4.
 
 ## r06 — HEXANEST PRODUCTION
@@ -437,7 +437,7 @@ After coding:
 ## r07 — Blender Expert Needed for Engaging Social Media Animations
 - **Associated project:** `mnstr-assoc`
 - **Rating:** 5.0/5 | **Date range:** May 4, 2026 – Jul 8, 2026 | **Source screenshot:** image6.png
-- **Client review text:** “Zubair was great to work with!”
+- **Client review text:** “Saad was great to work with!”
 
 ## r08 — Convert 3D Retail Display Designs to Photorealistic FBX Models for Web-Based AR (Ongoing Work)
 - **Associated project:** `bordertown-retail`
@@ -458,18 +458,18 @@ After coding:
 ## r11 — Develo a glb with blendshapes adapted to AI integration and lipsync
 - **Associated project:** `ai-avatar-blendshapes`
 - **Rating:** 5.0/5 | **Date range:** Oct 26, 2025 – Jan 15, 2026 | **Source screenshot:** image10.png
-- **Client review text:** “It has been amazing to work with Zubair. He is really well-prepared and he work very fast with the maximum quality possible. He fits perfectly all the need and requirements of my project. He deployed my blender avatar project at best and with all the correct criteria. Super happy to start to work with him!”
+- **Client review text:** “It has been amazing to work with Saad. He is really well-prepared and he work very fast with the maximum quality possible. He fits perfectly all the need and requirements of my project. He deployed my blender avatar project at best and with all the correct criteria. Super happy to start to work with him!”
 - **Note:** Transcription lightly normalized only for legibility; retain source image if exact quote punctuation is required.
 
 ## r12 — AR/App Work
 - **Associated project:** `artscapes-ar`
 - **Rating:** 5.0/5 | **Date range:** Dec 23, 2025 – Jan 6, 2026 | **Source screenshot:** image11.png
-- **Client review text:** “Working with Zubair was a great experience. He’s knowledgeable, easy to communicate with, and genuinely invested in delivering a solid result. He was flexible with feedback and made sure everything was implemented correctly. Highly recommended!”
+- **Client review text:** “Working with Saad was a great experience. He’s knowledgeable, easy to communicate with, and genuinely invested in delivering a solid result. He was flexible with feedback and made sure everything was implemented correctly. Highly recommended!”
 
 ## r13 — 3D Photorealistic Character Artist (Unity, iOS, Blendshapes)
 - **Associated project:** `photorealistic-character-rigging`
 - **Rating:** 5.0/5 | **Date range:** Sep 15, 2025 – Nov 3, 2025 | **Source screenshot:** image12.png
-- **Client review text:** “Zubair was a pleasure to work with and completed our 3D modeling / blendshape rigging project successfully. He was able to model characters from a reference image and rigged the character to have appropriate facial motions. Zubair communicated and provided updates in a timely manner.”
+- **Client review text:** “Saad was a pleasure to work with and completed our 3D modeling / blendshape rigging project successfully. He was able to model characters from a reference image and rigged the character to have appropriate facial motions. Saad communicated and provided updates in a timely manner.”
 
 ## r14 — 3D Model Animation
 - **Associated project:** `macrovey-ar-machine`
@@ -480,7 +480,7 @@ After coding:
 ## r15 — Ski Patrol VR MVP App
 - **Associated project:** `ski-patrol-vr`
 - **Rating:** 5.0/5 | **Date range:** Feb 28, 2025 – Oct 3, 2025 | **Source screenshot:** image14.png
-- **Client review text:** “Zubair did an excellent job on this project. I will use again once I had user feedback.”
+- **Client review text:** “Saad did an excellent job on this project. I will use again once I had user feedback.”
 
 ## r16 — 3D Symbol and Logo
 - **Associated project:** `3d-symbol-logo`
@@ -497,7 +497,7 @@ After coding:
 ## r18 — 3D Pre-rendered Background Artist for Product Showcase Site
 - **Associated project:** `dw-spectrum-showcase`
 - **Rating:** 5.0/5 | **Date range:** May 12, 2025 – Sep 19, 2025 | **Source screenshot:** image17.png
-- **Client review text:** “Zubair is timely, responsive and delivered quality results.”
+- **Client review text:** “Saad is timely, responsive and delivered quality results.”
 
 ## r19 — VR Developer Needed with Expertise in Photon Engine
 - **Associated project:** `photon-vr-meeting`
@@ -508,29 +508,29 @@ After coding:
 ## r20 — Mobile Game Developer Needed for Exciting Project
 - **Associated project:** `dandy-shandy`
 - **Rating:** 5.0/5 | **Date range:** Mar 21, 2025 – Aug 26, 2025 | **Source screenshot:** image19.png
-- **Client review text:** “It was a pleasure working with Zubair on this project, he was the perfect developer for us as we had very little experience with either game development or mobile app development. He provided clear guidance throughout and he was able to implement our idea to our satisfaction. We definitely recommend him.”
+- **Client review text:** “It was a pleasure working with Saad on this project, he was the perfect developer for us as we had very little experience with either game development or mobile app development. He provided clear guidance throughout and he was able to implement our idea to our satisfaction. We definitely recommend him.”
 
 ## r21 — 3D Modeller Needed for Simple 3D Character
 - **Associated project:** `zebra-mascot`
 - **Rating:** 5.0/5 | **Date range:** Jun 11, 2025 – Aug 25, 2025 | **Source screenshot:** image20.png
-- **Client review text:** “Zubair was a pleasure to work with! Communication was smooth throughout the entire project, and the work he produced was great quality and efficient. I highly recommend him as a freelance artist, and would work with him again if the opportunity arose.”
+- **Client review text:** “Saad was a pleasure to work with! Communication was smooth throughout the entire project, and the work he produced was great quality and efficient. I highly recommend him as a freelance artist, and would work with him again if the opportunity arose.”
 
 ## r22 — 3D Dental Image Renderings
 - **Associated project:** `preat-dental`
 - **Rating:** 5.0/5 | **Date range:** May 29, 2025 – Aug 1, 2025 | **Source screenshot:** image21.png
-- **Client review text:** “Working with Zubair has been an absolute pleasure. As a 3D artist, he brought an exceptional level of skill, creativity, and professionalism to our project at Preat. He produced high-quality product renders that not only showcased our products in stunning detail but also elevated the visual standard of our entire brand. Every image was polished, precise, and visually compelling—perfectly aligned with our technical and marketing goals. Even more impressive was the animation video Zubair created. From the lighting and textures to the pacing and transitions, he delivered a cinematic-quality piece that told our product story beautifully. He was receptive to feedback, collaborative throughout the process, and always met deadlines—often ahead of schedule. Zubair combines artistic talent with technical expertise, and his ability to translate complex product features into sleek, professional visuals makes him an invaluable creative partner. We’re already looking forward to working with him again!”
+- **Client review text:** “Working with Saad has been an absolute pleasure. As a 3D artist, he brought an exceptional level of skill, creativity, and professionalism to our project at Preat. He produced high-quality product renders that not only showcased our products in stunning detail but also elevated the visual standard of our entire brand. Every image was polished, precise, and visually compelling—perfectly aligned with our technical and marketing goals. Even more impressive was the animation video Saad created. From the lighting and textures to the pacing and transitions, he delivered a cinematic-quality piece that told our product story beautifully. He was receptive to feedback, collaborative throughout the process, and always met deadlines—often ahead of schedule. Saad combines artistic talent with technical expertise, and his ability to translate complex product features into sleek, professional visuals makes him an invaluable creative partner. We’re already looking forward to working with him again!”
 - **Note:** Full long review. Prefer an exact excerpt in a carousel and the entire quote on the project detail.
 
 ## r23 — 3d animation explainer video
 - **Associated project:** `intelliroad-explainer`
 - **Rating:** 5.0/5 | **Date range:** Jan 31, 2025 – Mar 22, 2025 | **Source screenshot:** image22.png
-- **Client review text:** “Zubair took on this project when I was in a jam. He graciously stepped up and created a very nice result for my client. He completed this project quickly (which was what I needed) and still with care and high quality work. He was easy to work with, communicated in a timely manner and asked good clarifying questions along the way. I highly recommend Zubair for any animation work.”
+- **Client review text:** “Saad took on this project when I was in a jam. He graciously stepped up and created a very nice result for my client. He completed this project quickly (which was what I needed) and still with care and high quality work. He was easy to work with, communicated in a timely manner and asked good clarifying questions along the way. I highly recommend Saad for any animation work.”
 - **Note:** Screenshot shows 5.0 of 2 reviews; only one readable review supplied.
 
 ## r24 — Designer Needed to turn 3D Model into Interactive Website Movie
 - **Associated project:** `engo-bluebird`
 - **Rating:** 5.0/5 | **Date range:** Sep 11, 2024 – Nov 19, 2024 | **Source screenshot:** image23.png
-- **Client review text:** “Zubair went above and beyond to complete this job. Excellent communication, organization, and quality of work. His attention to detail and understanding of 3D product configurators helped him deliver a finished project beyond our expectations. Now we have a show stopping 3D interactive 3D model to present our product. Would highly recommend Zubair for any 3D modeling work. Exceptional!”
+- **Client review text:** “Saad went above and beyond to complete this job. Excellent communication, organization, and quality of work. His attention to detail and understanding of 3D product configurators helped him deliver a finished project beyond our expectations. Now we have a show stopping 3D interactive 3D model to present our product. Would highly recommend Saad for any 3D modeling work. Exceptional!”
 
 ## r25 — extra for ceilings
 - **Associated project:** `extra-ceilings`

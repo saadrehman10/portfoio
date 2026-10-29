@@ -16,8 +16,8 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <Link href="/" className="mark" aria-label="Zubair home">
-        Z
+      <Link href="/" className="mark" aria-label="Saad home">
+        S
       </Link>
       <nav className="nav-pills" aria-label="Primary">
         {links.map((link) => {
