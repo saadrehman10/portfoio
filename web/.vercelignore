@@ -1,0 +1,12 @@
+node_modules
+.build
+build
+.next
+out
+coverage
+*.tsbuildinfo
+.env*
+!.env.example
+public/assets
+README.md
+AGENTS.md

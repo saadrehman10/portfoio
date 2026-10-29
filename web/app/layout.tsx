@@ -3,7 +3,7 @@ import { Outfit, Fraunces } from "next/font/google";
 import { DevtoolsConsoleFilter } from "@/components/DevtoolsConsoleFilter";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getSiteThemeStyle } from "@/components/SiteTheme";
+import { SiteTheme } from "@/components/SiteTheme";
 import "./globals.css";
 
 const body = Outfit({
@@ -22,12 +22,11 @@ export const metadata: Metadata = {
     "Personal portfolio for a 3D and motion designer. Product films, characters, spaces, and explainers.",
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const theme = await getSiteThemeStyle();
-
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme={theme.preset} style={theme.style}>
+    <html lang="en">
       <body id="top" className={`${body.variable} ${display.variable}`}>
+        <SiteTheme />
         {process.env.NODE_ENV === "development" ? <DevtoolsConsoleFilter /> : null}
         <SiteHeader />
         {children}
