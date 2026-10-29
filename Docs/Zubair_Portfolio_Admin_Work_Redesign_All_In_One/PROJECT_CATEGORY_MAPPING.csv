@@ -1,0 +1,33 @@
+﻿Source Record ID,Project Title,Proposed Main Category,Proposed Subcategory Path,Secondary Placements,Existing Source,Review Count,Admin Review Needed,Taxonomy Notes
+creative-group-events,Creative Group — Event Visualization,architectural,arch-viz,,Project with reviews.docx,2,True,Event visualization; confirm preferred architectural vs event specialty
+stylized-fox-vrm,Stylized Fox — VRM Character & Rig,3d,character-art,,Project with reviews.docx,1,True,"Same Fox Girl project as new character doc; merge copy, do not duplicate."
+zaffiri-precision,Zaffiri Precision — Automated Product Visualization,renders,product-renders,3d > 3d-animation > product-animation,Project with reviews.docx,2,False,Both product renders and animation exist; primary chosen as render series.
+adam-ai-architectural-configurator,Adam AI — Architectural Configurator,development,web-interactive,architectural > arch-viz,Project with reviews.docx,0,True,Browser configurator is NOT confirmed to use Unity or Unreal.
+mnstr-assoc,MNSTR Assoc — 360° Jewelry Animation,3d,3d-animation > product-animation,,Project with reviews.docx,1,False,
+bordertown-retail,Bordertown Retail — AR-Ready Displays,3d,3d-modeling-assets,development > web-interactive,Project with reviews.docx,2,True,Created FBX/AR-ready assets; do not claim authoring the full AR platform.
+gooplast,GooPlast — Construction Product Explainers,3d,3d-animation > installation-animation,3d > 3d-animation > product-explainer,Project with reviews.docx,1,False,Installation and product explanation both supported.
+artscapes-ar,Artscapes — Mobile AR Application,development,unity,,Project with reviews.docx,1,False,
+ai-avatar-blendshapes,AI Avatar — Blendshapes & Lip Sync,3d,character-art,,Project with reviews.docx,1,False,
+photorealistic-character-rigging,Photorealistic Character — Blendshapes & Rigging,3d,character-art,,Project with reviews.docx,1,False,
+macrovey-ar-machine,Macrovey — AR Machine Visualization,3d,3d-animation > product-explainer,development > vr-ar-unverified-engine,Project with reviews.docx,1,True,"AR content, engine not confirmed."
+ski-patrol-vr,Ski Patrol — VR Rescue Training,development,vr-ar-unverified-engine,,Project with reviews.docx,1,True,VR project but engine not explicitly confirmed.
+vr-house-walkthrough,Interactive VR House Walkthrough,development,unity,architectural > interior-exterior,Project with reviews.docx,1,True,Review title references Unity developer.
+dw-spectrum-showcase,DW Spectrum — Event Booth Visualization,architectural,arch-viz,renders > lifestyle-renders,Project with reviews.docx,1,False,Event booth visualization.
+photon-vr-meeting,Photon VR — Remote Meeting Environment,development,vr-ar-unverified-engine,,Project with reviews.docx,1,True,Photon does not prove Unity or Unreal by itself.
+dandy-shandy,Dandy Shandy — Mobile Game,development,unity,,Project with reviews.docx,1,False,
+zebra-mascot,Zebra Mascot — 3D Character,3d,character-art,,Project with reviews.docx,1,False,
+preat-dental,Preat — Dental Product Visualization,renders,product-renders,3d > 3d-animation > product-animation,Project with reviews.docx,1,False,Includes both dental rendering and animation.
+intelliroad-explainer,IntelliRoad — 3D Tolling Explainer,3d,3d-animation > product-explainer,,Project with reviews.docx,1,False,
+engo-bluebird,Engo Planet — Interactive Solar Products,development,web-interactive,renders > hero-renders,Project with reviews.docx,1,True,PlayCanvas product configurator; do not classify as Unity/Unreal without proof.
+hexanest-production,HEXANEST PRODUCTION — Client Review,,,,Project with reviews.docx,1,True,Evidence only; source does not identify the visual deliverable. Admin review needed.
+3d-symbol-logo,3D Symbol and Logo,3d,3d-modeling-assets,,Project with reviews.docx,1,False,
+extra-ceilings,Extra for Ceilings,architectural,interior,,Project with reviews.docx,1,True,Architectural location is tentative; confirm intended subcategory.
+container-ship-render,3D Rendering of Container Ship,renders,standalone,,Project with reviews.docx,1,False,"Industrial ship standalone render, verify format."
+zero-lifestyle-watch,ZERO Lifestyle — Smartwatch Colorway Animation,3d,3d-animation > product-animation,,Product_Animation_Portfolio_Copy_5_Projects.docx,0,False,
+bang-olufsen-speaker,Bang & Olufsen — Exploded-View Speaker Animation,3d,3d-animation > product-animation,3d > 3d-animation > product-explainer,Product_Animation_Portfolio_Copy_5_Projects.docx,0,False,
+venty-tower-fan,VENTY — Tower Fan Product Animation,3d,3d-animation > product-animation,,Product_Animation_Portfolio_Copy_5_Projects.docx,0,False,
+air-purifier-explainer,Air Purifier — Product Explainer Animation,3d,3d-animation > product-explainer,,Product_Animation_Portfolio_Copy_5_Projects.docx,0,False,
+mini-pc-assembly,Mini PC — Cinematic Assembly Animation,3d,3d-animation > product-animation,,Product_Animation_Portfolio_Copy_5_Projects.docx,0,False,
+football-players-unreal,Football Player Characters for Unreal Engine,3d,character-art,development > unreal,Character_Art_Game_Character_Portfolio.docx,0,False,
+michella-family-characters,Michella — Stylized Family Characters for Animation,3d,character-art,,Character_Art_Game_Character_Portfolio.docx,0,False,
+game-creatures-monsters,Game Creatures & Monsters — Bosses and Mobs,3d,character-art,,Character_Art_Game_Character_Portfolio.docx,0,False,

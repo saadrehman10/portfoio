@@ -1,0 +1,107 @@
+{
+  "disclaimer": "Illustrative entity schema only. Cursor must adapt to verified existing database/ORM, IDs, statuses, routes and publishing infrastructure. This is NOT existing live CMS data.",
+  "category": {
+    "id": "category-3d",
+    "parentId": null,
+    "slug": "3d",
+    "name": "3D",
+    "sortOrder": 0,
+    "visible": true,
+    "status": "published",
+    "intro": "From the first shape to the final frame.",
+    "leadProjectId": null
+  },
+  "categoryChild": {
+    "id": "category-product-animation",
+    "parentId": "category-3d-animation",
+    "slug": "product-animation",
+    "name": "Product Animation",
+    "sortOrder": 0,
+    "visible": true,
+    "status": "published"
+  },
+  "project": {
+    "id": "canonical-project-id",
+    "slug": "existing-stable-slug",
+    "title": "Existing project title",
+    "primaryCategoryId": "category-product-animation",
+    "canonicalMediaIds": [],
+    "status": "draft",
+    "seo": {},
+    "contentSource": "existing-project-data"
+  },
+  "projectPlacement": {
+    "id": "placement-id",
+    "projectId": "canonical-project-id",
+    "categoryId": "category-product-animation",
+    "isPrimary": true,
+    "visibleInWork": true,
+    "sortOrder": 0,
+    "cardCoverMediaId": null,
+    "cardExcerptOverride": null,
+    "featuredInCategory": false
+  },
+  "projectPage": {
+    "projectId": "canonical-project-id",
+    "template": "product-animation",
+    "hero": {
+      "type": "video",
+      "mediaId": "reference-to-approved-existing-video",
+      "posterMediaId": "reference-to-approved-existing-poster",
+      "preserveIntrinsicAspectRatio": true
+    },
+    "blocks": [
+      {
+        "id": "block-1",
+        "type": "overview",
+        "order": 0,
+        "visible": true,
+        "content": "Actual project content from approved source data"
+      },
+      {
+        "id": "block-2",
+        "type": "mediaGallery",
+        "order": 1,
+        "visible": true,
+        "mediaIds": []
+      },
+      {
+        "id": "block-3",
+        "type": "clientReview",
+        "order": 2,
+        "visible": true,
+        "reviewIds": []
+      }
+    ]
+  },
+  "review": {
+    "id": "verified-review-record-id",
+    "projectId": "canonical-project-id",
+    "quote": null,
+    "rating": null,
+    "sourceEvidenceId": null,
+    "verificationStatus": "needs-verification",
+    "publicationStatus": "draft"
+  },
+  "workPageConfig": {
+    "pageId": "work",
+    "headline": "Work, made to be experienced.",
+    "visibleRootCategoryIds": [
+      "category-3d",
+      "category-renders",
+      "category-architectural",
+      "category-development"
+    ],
+    "sortStrategy": "manual-placement-order",
+    "galleryVariant": "editorial-grid"
+  },
+  "revision": {
+    "entityType": "workPageConfig",
+    "entityId": "work",
+    "status": "draft",
+    "createdByUserId": "authenticated-admin-id",
+    "createdAt": null,
+    "publishedAt": null,
+    "supersedesRevisionId": null
+  }
+}
