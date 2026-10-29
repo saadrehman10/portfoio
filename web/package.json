@@ -9,7 +9,8 @@
     "lint": "eslint",
     "sync-projects": "node scripts/sync-projects.mjs",
     "prepare-assets": "node scripts/prepare-assets.mjs",
-    "vercel-build": "npm run prepare-assets && npm run build"
+    "vercel-build": "npm run prepare-assets && npm run build",
+    "build:folder": "next build && node scripts/copy-build-folder.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.9",
