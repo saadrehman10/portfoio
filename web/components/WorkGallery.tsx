@@ -7,7 +7,6 @@ import type { WorkPageStore } from "@/lib/cms/work-page-defaults";
 import type { ResolvedWorkGroup } from "@/lib/work-layout-types";
 import { ProjectCover } from "@/components/ProjectMedia";
 import { isEmbed } from "@/lib/media";
-import { UpworkHireLink } from "@/components/UpworkHireLink";
 import { projectsByCategoryList } from "@/lib/project-ordering";
 
 export function WorkGallery({
@@ -277,9 +276,9 @@ export function WorkGallery({
           </h2>
           <p style={{ maxWidth: 560, margin: "12px auto 24px" }}>{workPage.ctaDescription}</p>
           <div className="hero-actions" style={{ justifyContent: "center" }}>
-            <UpworkHireLink className="pill solid" href={workPage.ctaPrimaryHref}>
+            <Link className="pill solid" href={workPage.ctaPrimaryHref}>
               {workPage.ctaPrimaryLabel}
-            </UpworkHireLink>
+            </Link>
             <button
               type="button"
               className="pill"

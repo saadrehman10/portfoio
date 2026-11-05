@@ -8,7 +8,6 @@ import {
 import { ProjectClientBlock } from "@/components/ProjectClientBlock";
 import { ProjectDetailView } from "@/components/ProjectDetailView";
 import { ProjectReviews } from "@/components/ProjectReviews";
-import { UpworkHireLink } from "@/components/UpworkHireLink";
 import { categoryGroupFor, categoryLabel } from "@/lib/content";
 import { getProjectClientInfo } from "@/lib/project-client-details";
 import {
@@ -68,7 +67,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     enrichment.overview ||
     "";
   const displayTitle = pageOverride?.pageHeadline?.trim() || project.title;
-  const hireLabel = pageOverride?.ctaLabel?.trim() || "Hire Me on Upwork";
+  const hireLabel = pageOverride?.ctaLabel?.trim() || "Contact me";
   const related = projectsByCategoryList(
     allProjects,
     project.category,
@@ -113,7 +112,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
               <CaseStudyLinks enrichment={enrichment} />
               <div className="hero-actions" style={{ justifyContent: "flex-start" }}>
-                <UpworkHireLink className="pill solid">{hireLabel}</UpworkHireLink>
+                <Link className="pill solid" href="/contact">
+                  {hireLabel}
+                </Link>
                 <Link className="pill" href={`/work#${project.category}`}>
                   Back to {sectionLabel}
                 </Link>
@@ -153,7 +154,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <p style={{ maxWidth: 520, margin: "12px auto 24px" }}>
             Unity, Unreal, AI/ML, 3D, or XR — let&apos;s scope a build you can run.
           </p>
-          <UpworkHireLink className="pill solid">Hire Me on Upwork</UpworkHireLink>
+          <Link className="pill solid" href="/contact">
+            Contact me
+          </Link>
         </div>
       </section>
     </main>

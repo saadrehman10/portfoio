@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { UpworkHireLink } from "@/components/UpworkHireLink";
 import { readSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
@@ -51,7 +50,9 @@ export default async function ServicesPage() {
             Bring the platform, timeline, and definition of done—I will come back with a clear first milestone.
           </p>
           <div className="hero-actions" style={{ justifyContent: "center" }}>
-            <UpworkHireLink className="pill solid">Hire Me on Upwork</UpworkHireLink>
+            <Link className="pill solid" href="/contact">
+              Contact me
+            </Link>
             <Link className="pill" href="/work">
               See work
             </Link>

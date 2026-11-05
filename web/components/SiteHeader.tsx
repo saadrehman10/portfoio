@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { UpworkHireLink } from "@/components/UpworkHireLink";
 
 const links = [
   { href: "/work", label: "work" },
@@ -29,7 +28,9 @@ export function SiteHeader() {
             </Link>
           );
         })}
-        <UpworkHireLink className="pill solid">hire on upwork</UpworkHireLink>
+        <Link className="pill solid" href="/contact">
+          get in touch
+        </Link>
       </nav>
     </header>
   );

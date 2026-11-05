@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { UpworkHireLink } from "@/components/UpworkHireLink";
 import { readSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
@@ -29,9 +28,9 @@ export default async function AboutPage() {
             <Link className="pill solid" href={about.ctaPrimaryHref}>
               {about.ctaPrimaryLabel}
             </Link>
-            <UpworkHireLink className="pill" href={about.ctaSecondaryHref}>
+            <Link className="pill" href={about.ctaSecondaryHref}>
               {about.ctaSecondaryLabel}
-            </UpworkHireLink>
+            </Link>
           </div>
         </div>
       </section>

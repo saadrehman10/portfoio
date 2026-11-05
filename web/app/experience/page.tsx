@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { UpworkHireLink } from "@/components/UpworkHireLink";
 import { readSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
@@ -74,7 +73,9 @@ export default async function ExperiencePage() {
             Unity, Unreal, XR, or computer vision—share the brief and we can scope the next milestone.
           </p>
           <div className="hero-actions" style={{ justifyContent: "center" }}>
-            <UpworkHireLink className="pill solid">Hire Me on Upwork</UpworkHireLink>
+            <Link className="pill solid" href="/contact">
+              Contact me
+            </Link>
             <Link className="pill" href="/about">
               About me
             </Link>

@@ -590,7 +590,7 @@ export function ProjectManager({
                       Hire CTA label
                       <input
                         value={row.ctaLabel ?? ""}
-                        placeholder="Hire Me on Upwork"
+                        placeholder="Contact me"
                         onChange={(e) => updateRow(row.slug, { ctaLabel: e.target.value })}
                       />
                     </label>

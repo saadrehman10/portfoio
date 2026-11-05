@@ -151,10 +151,15 @@ export type ContactPageStore = {
   eyebrow: string;
   headline: string;
   intro: string;
+  email: string;
+  phone: string;
+  cvUrl: string;
+  cvLabel: string;
   formVisible: boolean;
   formNote: string;
   successMessage: string;
   errorMessage: string;
+  /** @deprecated prefer contact form / email */
   upworkLabel: string;
 };
 
@@ -231,8 +236,8 @@ export function buildDefaultPages(): PagesStore {
       ],
       ctaPrimaryLabel: "View experience",
       ctaPrimaryHref: "/experience",
-      ctaSecondaryLabel: "Hire Me on Upwork",
-      ctaSecondaryHref: UPWORK_PROFILE_URL,
+      ctaSecondaryLabel: "Contact me",
+      ctaSecondaryHref: "/contact",
       editorialFlag: "",
     },
     services: {
@@ -332,12 +337,16 @@ export function buildDefaultPages(): PagesStore {
       eyebrow: "contact",
       headline: "tell me what you're building.",
       intro:
-        "The fastest path is Upwork—share platform, brief, references, and timeline. Unity, Unreal, AI/CV, 3D, or XR: start with the outcome.",
-      formVisible: false,
-      formNote: "",
-      successMessage: "Message saved locally. This form does not send email yet.",
-      errorMessage: "Could not save your message. Please try again.",
-      upworkLabel: "Hire Me on Upwork",
+        "Share the platform, brief, references, and timeline. Unity, Unreal, AI/CV, 3D, or XR—start with the outcome and I'll reply with next steps.",
+      email: "saadrehman264@hotmail.com",
+      phone: "+92 313 2274337",
+      cvUrl: "/Saad_Ur_Rehman_CV.pdf",
+      cvLabel: "Download CV",
+      formVisible: true,
+      formNote: "Prefer a call or email? Use the details on the left—or send a note with the form.",
+      successMessage: "Thanks — your note is saved. I'll get back to you soon.",
+      errorMessage: "Could not save your message. Please try again or email me directly.",
+      upworkLabel: "Contact me",
     },
   };
 }
@@ -351,8 +360,8 @@ export function buildDefaultHomepage(): HomepageStore {
         "I build Unity and Unreal experiences, AI and computer-vision features, and XR products—helping teams ship interactive software that feels sharp in-engine and smart in production.",
       primaryCtaLabel: "Explore My Work",
       primaryCtaHref: "#selected-work",
-      secondaryCtaLabel: "Hire Me on Upwork",
-      secondaryCtaHref: UPWORK_PROFILE_URL,
+      secondaryCtaLabel: "Contact me",
+      secondaryCtaHref: "/contact",
       scrollLabel: "Scroll to Explore",
       mediaSrc: HERO_FALLBACK_MEDIA,
     },
@@ -400,8 +409,8 @@ export function buildDefaultHomepage(): HomepageStore {
       description:
         "Whether you are shipping a game feature, an Unreal environment, a vision pipeline, or an AR/VR prototype—I can help you move from idea to runnable build.",
       closing: "Let's make the next milestone something your team can open and trust.",
-      primaryLabel: "Hire Me on Upwork",
-      primaryHref: UPWORK_PROFILE_URL,
+      primaryLabel: "Contact me",
+      primaryHref: "/contact",
       secondaryLabel: "Explore All Work",
       secondaryHref: "/work",
     },

@@ -1,4 +1,3 @@
-import { UPWORK_PROFILE_URL } from "@/lib/site-links";
 import type { ProjectCategory } from "@/lib/content";
 
 export type WorkCategoryMeta = {
@@ -39,8 +38,8 @@ export function buildDefaultWorkPage(): WorkPageStore {
     ctaHeading: "Building something in this stack?",
     ctaDescription:
       "From a Unity prototype to an Unreal environment, an AI feature, or an XR demo—I can help turn the brief into a build you can run.",
-    ctaPrimaryLabel: "Hire Me on Upwork",
-    ctaPrimaryHref: UPWORK_PROFILE_URL,
+    ctaPrimaryLabel: "Contact me",
+    ctaPrimaryHref: "/contact",
     ctaSecondaryLabel: "Back to All Work",
     showLeadProject: true,
     projectOrder: {},

@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 export function ContactForm({
-  successMessage = "Message saved in this browser only. Hook this form to your Upwork invite or email when you are ready to take real jobs.",
-  errorMessage = "Could not save your message. Please try again.",
+  successMessage = "Thanks — your note is saved. I'll get back to you soon.",
+  errorMessage = "Could not save your message. Please try again or email me directly.",
 }: {
   successMessage?: string;
   errorMessage?: string;
@@ -44,20 +44,26 @@ export function ContactForm({
       </label>
       <label>
         What do you need?
-        <select name="need" defaultValue="Product film">
-          <option>Product film</option>
-          <option>Character or mascot</option>
-          <option>Interior or environment</option>
-          <option>Explainer</option>
+        <select name="need" defaultValue="Unity development">
+          <option>Unity development</option>
+          <option>Unreal Engine</option>
+          <option>AI / ML / computer vision</option>
+          <option>XR — AR / VR</option>
+          <option>3D visualization</option>
           <option>Not sure yet</option>
         </select>
       </label>
       <label>
         Project note
-        <textarea name="note" rows={5} required placeholder="Timeline, references, and where it will be used." />
+        <textarea
+          name="note"
+          rows={5}
+          required
+          placeholder="Timeline, platform, references, and where it will ship."
+        />
       </label>
       <button className="pill solid" type="submit">
-        send note
+        Send note
       </button>
     </form>
   );

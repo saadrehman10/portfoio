@@ -81,8 +81,8 @@
       "description": "I build Unity and Unreal experiences, AI and computer-vision features, and XR products—helping teams ship interactive software that feels sharp in-engine and smart in production.",
       "primaryCtaLabel": "Explore My Work",
       "primaryCtaHref": "#selected-work",
-      "secondaryCtaLabel": "Hire Me on Upwork",
-      "secondaryCtaHref": "https://www.upwork.com/freelancers/zubaira27",
+      "secondaryCtaLabel": "Contact me",
+      "secondaryCtaHref": "/contact",
       "scrollLabel": "Scroll to Explore",
       "mediaSrc": "/assets/Untiy/Unity%20Game/Movie_002.mp4"
     },
@@ -213,8 +213,8 @@
       "title": "Need Unity, Unreal, AI, or XR?",
       "description": "Whether you are shipping a game feature, an Unreal environment, a vision pipeline, or an AR/VR prototype—I can help you move from idea to runnable build.",
       "closing": "Let's make the next milestone something your team can open and trust.",
-      "primaryLabel": "Hire Me on Upwork",
-      "primaryHref": "https://www.upwork.com/freelancers/zubaira27",
+      "primaryLabel": "Contact me",
+      "primaryHref": "/contact",
       "secondaryLabel": "Explore All Work",
       "secondaryHref": "/work"
     }
@@ -276,8 +276,8 @@
       ],
       "ctaPrimaryLabel": "View experience",
       "ctaPrimaryHref": "/experience",
-      "ctaSecondaryLabel": "Hire Me on Upwork",
-      "ctaSecondaryHref": "https://www.upwork.com/freelancers/zubaira27",
+      "ctaSecondaryLabel": "Contact me",
+      "ctaSecondaryHref": "/contact",
       "editorialFlag": ""
     },
     "services": {
@@ -366,12 +366,16 @@
     "contact": {
       "eyebrow": "contact",
       "headline": "tell me what you're building.",
-      "intro": "The fastest path is Upwork—share platform, brief, references, and timeline. Unity, Unreal, AI/CV, 3D, or XR: start with the outcome.",
-      "formVisible": false,
-      "formNote": "",
-      "successMessage": "Message saved locally. This form does not send email yet.",
-      "errorMessage": "Could not save your message. Please try again.",
-      "upworkLabel": "Hire Me on Upwork"
+      "intro": "Share the platform, brief, references, and timeline. Unity, Unreal, AI/CV, 3D, or XR—start with the outcome and I'll reply with next steps.",
+      "email": "saadrehman264@hotmail.com",
+      "phone": "+92 313 2274337",
+      "formVisible": true,
+      "formNote": "Prefer a call or email? Use the details on the left—or send a note with the form.",
+      "successMessage": "Thanks — your note is saved. I'll get back to you soon.",
+      "errorMessage": "Could not save your message. Please try again or email me directly.",
+      "upworkLabel": "Contact me",
+      "cvUrl": "/Saad_Ur_Rehman_CV.pdf",
+      "cvLabel": "Download CV"
     }
   },
   "workPage": {
@@ -383,8 +387,8 @@
     "emptyText": "No projects match these filters. Try Unity, Unreal, AI, 3D, or XR.",
     "ctaHeading": "Building something in this stack?",
     "ctaDescription": "From a Unity prototype to an Unreal environment, an AI feature, or an XR demo—I can help turn the brief into a build you can run.",
-    "ctaPrimaryLabel": "Hire Me on Upwork",
-    "ctaPrimaryHref": "https://www.upwork.com/freelancers/zubaira27",
+    "ctaPrimaryLabel": "Contact me",
+    "ctaPrimaryHref": "/contact",
     "ctaSecondaryLabel": "Back to All Work",
     "showLeadProject": true,
     "projectOrder": {},
@@ -440,5 +444,5 @@
       "colorScheme": "dark"
     }
   },
-  "updatedAt": "2026-11-05T12:22:54.949Z"
+  "updatedAt": "2026-11-05T13:13:16.516Z"
 }

@@ -1,13 +1,25 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import { UpworkHireLink } from "@/components/UpworkHireLink";
-import { buildDefaultGlobal } from "@/lib/cms/homepage-defaults";
+import { buildDefaultGlobal, buildDefaultPages } from "@/lib/cms/homepage-defaults";
 import { readSiteConfig } from "@/lib/site-config";
 import type { GlobalSiteSettings } from "@/lib/cms/homepage-defaults";
 
 const year = new Date().getFullYear();
+const defaultContact = buildDefaultPages().contact;
 
-function FooterMarkup({ global }: { global: GlobalSiteSettings }) {
+function phoneHref(phone: string) {
+  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+}
+
+function FooterMarkup({
+  global,
+  email,
+  phone,
+}: {
+  global: GlobalSiteSettings;
+  email: string;
+  phone: string;
+}) {
   return (
     <footer className="site-footer">
       <div className="site-footer-glow" aria-hidden />
@@ -18,9 +30,9 @@ function FooterMarkup({ global }: { global: GlobalSiteSettings }) {
           <h2 className="site-footer-headline">{global.footerHeadline}</h2>
           <p className="site-footer-desc">{global.footerDescription}</p>
           <div className="site-footer-actions">
-            <UpworkHireLink className="pill solid site-footer-hire" href={global.upworkUrl}>
-              Hire Me on Upwork
-            </UpworkHireLink>
+            <Link className="pill solid site-footer-hire" href="/contact">
+              Contact me
+            </Link>
             <Link className="pill ghost-light" href="/work">
               View My Work
             </Link>
@@ -39,8 +51,12 @@ function FooterMarkup({ global }: { global: GlobalSiteSettings }) {
           </nav>
           <nav aria-label="Connect">
             <h3>Connect</h3>
-            <UpworkHireLink href={global.upworkUrl}>Upwork Profile</UpworkHireLink>
-            <UpworkHireLink href={global.upworkUrl}>Start a Project</UpworkHireLink>
+            <a href={`mailto:${email}`}>{email}</a>
+            <a href={phoneHref(phone)}>{phone}</a>
+            <a href="/Saad_Ur_Rehman_CV.pdf" download="Saad_Ur_Rehman_CV.pdf">
+              Download CV
+            </a>
+            <Link href="/contact">Send a project note</Link>
           </nav>
           <div>
             <h3>What I Do</h3>
@@ -69,12 +85,26 @@ function FooterMarkup({ global }: { global: GlobalSiteSettings }) {
 
 async function SiteFooterAsync() {
   const config = await readSiteConfig();
-  return <FooterMarkup global={config.global} />;
+  return (
+    <FooterMarkup
+      global={config.global}
+      email={config.pages.contact.email}
+      phone={config.pages.contact.phone}
+    />
+  );
 }
 
 export function SiteFooter() {
   return (
-    <Suspense fallback={<FooterMarkup global={buildDefaultGlobal()} />}>
+    <Suspense
+      fallback={
+        <FooterMarkup
+          global={buildDefaultGlobal()}
+          email={defaultContact.email}
+          phone={defaultContact.phone}
+        />
+      }
+    >
       <SiteFooterAsync />
     </Suspense>
   );

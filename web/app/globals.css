@@ -1172,10 +1172,10 @@ img {
 }
 
 .contact-hero {
-  min-height: calc(100vh - 160px);
+  min-height: auto;
   display: grid;
   place-items: center;
-  padding: clamp(48px, 10vh, 120px) 24px;
+  padding: clamp(40px, 8vh, 88px) 24px 24px;
   text-align: center;
 }
 
@@ -1193,30 +1193,73 @@ img {
 .contact-hero h1 {
   max-width: 16ch;
   margin: 0;
-  font-size: clamp(48px, 9vw, 104px);
+  font-size: clamp(42px, 8vw, 88px);
   line-height: 0.94;
 }
 
 .contact-hero-lede {
-  max-width: 36ch !important;
+  max-width: 40ch !important;
   margin: 0 !important;
   font-size: clamp(18px, 2.4vw, 24px) !important;
   line-height: 1.45;
   color: var(--ink-soft);
 }
 
-.contact-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 10px;
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: start;
+  padding-bottom: clamp(48px, 8vh, 96px);
 }
 
-.contact-hero-actions .pill {
-  min-height: 48px;
-  padding: 0 24px;
-  font-size: 16px;
+.contact-details,
+.contact-form-panel {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.contact-form-panel {
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-elevated, var(--paper, #fff)) 92%, transparent);
+}
+
+.contact-detail-list {
+  display: grid;
+  gap: 18px;
+  margin: 12px 0 0;
+}
+
+.contact-detail-list div {
+  display: grid;
+  gap: 4px;
+}
+
+.contact-detail-list dt {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.contact-detail-list dd {
+  margin: 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+}
+
+.contact-detail-list a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
 }
 
 .list {
