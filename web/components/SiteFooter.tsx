@@ -31,9 +31,10 @@ function FooterMarkup({ global }: { global: GlobalSiteSettings }) {
           <nav aria-label="Explore">
             <h3>Explore</h3>
             <Link href="/work">Selected Work</Link>
-            <Link href="/reviews">Client Feedback</Link>
             <Link href="/services">Services</Link>
+            <Link href="/experience">Experience</Link>
             <Link href="/about">About Me</Link>
+            <Link href="/reviews">Client Feedback</Link>
             <Link href="/contact">Contact</Link>
           </nav>
           <nav aria-label="Connect">
@@ -43,10 +44,10 @@ function FooterMarkup({ global }: { global: GlobalSiteSettings }) {
           </nav>
           <div>
             <h3>What I Do</h3>
-            <p className="site-footer-specialty">Product CGI &amp; Animation</p>
-            <p className="site-footer-specialty">Characters &amp; Motion</p>
-            <p className="site-footer-specialty">Spaces &amp; Environments</p>
-            <p className="site-footer-specialty">Interactive 3D &amp; AR</p>
+            <p className="site-footer-specialty">Unity Development</p>
+            <p className="site-footer-specialty">Unreal Engine</p>
+            <p className="site-footer-specialty">AI / ML / Computer Vision</p>
+            <p className="site-footer-specialty">3D &amp; XR (AR / VR)</p>
           </div>
         </div>
 

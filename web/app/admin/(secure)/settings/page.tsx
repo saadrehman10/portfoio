@@ -1,11 +1,5 @@
-import { GlobalSettingsManager } from "@/components/admin/GlobalSettingsManager";
-import { readEditableSiteConfig } from "@/lib/site-config";
+import { redirect } from "next/navigation";
 
-export const instant = false;
-
-export const metadata = { title: "Global Settings | Admin" };
-
-export default async function AdminSettingsPage() {
-  const { config } = await readEditableSiteConfig();
-  return <GlobalSettingsManager initialConfig={config} />;
+export default function AdminSettingsRedirect() {
+  redirect("/admin/homepage");
 }

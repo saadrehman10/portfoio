@@ -10,86 +10,86 @@ export type FeaturedChapterCopy = {
 
 export const featuredChaptersCopy: FeaturedChapterCopy[] = [
   {
-    slug: "character-anime",
-    clientLabel: "MNSTR Assoc — 360° Product Animation",
-    headline: "Every detail. Every angle.",
-    body: "360-degree product animation for anime-inspired jewelry, created to showcase design, materials, and craftsmanship from every perspective.",
+    slug: "unity-unity-game",
+    clientLabel: "Unity — Real-time Gameplay & Environments",
+    headline: "Built to play. Tuned to feel right.",
+    body: "Unity systems, environments, and interactive prototypes shaped for performance, clarity, and player-facing polish—from first playable to shippable build.",
     cta: "Explore Project",
   },
   {
-    slug: "explainer-configurator",
-    clientLabel: "Interactive Configurators — Adam AI, Engo Planet & Blue Bird",
-    headline: "Don't just show it. Let people explore it.",
-    body: "Interactive 3D experiences that transform static product presentations into customizable, engaging experiences that users can explore directly in their browser.",
+    slug: "unreal-fantasy-castle",
+    clientLabel: "Unreal Engine — Immersive Worlds",
+    headline: "Worlds you can walk through.",
+    body: "Unreal environments and cinematic real-time scenes designed for presence—lighting, scale, and spatial storytelling that hold up in-engine.",
     cta: "Explore Project",
   },
   {
     slug: "explainer-app-animation",
-    clientLabel: "Artscapes — Augmented Reality",
-    headline: "Beyond the screen. Into the real world.",
-    body: "An interactive AR experience developed with Unity for iOS and Android, bringing digital content into real-world environments.",
+    clientLabel: "XR — Augmented Reality Experience",
+    headline: "Beyond the screen. Into the room.",
+    body: "AR and XR experiences that place digital systems in physical space—built for real devices, real lighting, and real user behavior.",
     cta: "Explore Project",
   },
 ];
 
 export const expertiseItems = [
   {
-    id: "product",
+    id: "unity",
     index: "01",
-    title: "Product CGI & Animation",
-    body: "Photorealistic product renders, detailed 3D models, and animations that make every angle count.",
-    href: "/work#animation",
-    mediaSlug: "product-animation-product-animation",
+    title: "Unity Development",
+    body: "Gameplay systems, tools, environments, and interactive apps in Unity—shipped with clean architecture and production-minded performance.",
+    href: "/work#unity",
+    mediaSlug: "unity-unity-game",
   },
   {
-    id: "character",
+    id: "unreal",
     index: "02",
-    title: "Characters & Motion",
-    body: "Expressive characters, stylized animations, and carefully crafted 3D assets for stories, games, and digital experiences.",
-    href: "/work#animation",
-    mediaSlug: "character-mascot",
+    title: "Unreal Engine",
+    body: "Real-time environments, cinematic lighting, and interactive Unreal experiences built for immersion, fidelity, and frame budget.",
+    href: "/work#unreal",
+    mediaSlug: "unreal-fantasy-castle",
   },
   {
-    id: "spaces",
+    id: "ai",
     index: "03",
-    title: "Spaces & Environments",
-    body: "Architectural visualization, interiors, exteriors, and immersive environments that bring spaces to life before they're built.",
-    href: "/work#architectural",
-    mediaSlug: "interior-interior",
+    title: "AI / ML / Computer Vision",
+    body: "Intelligent pipelines that see, classify, and generate—computer vision, model-assisted workflows, and AI features wired into real products.",
+    href: "/work#ai",
+    mediaSlug: "product-animation-ai-product",
   },
   {
-    id: "interactive",
+    id: "xr",
     index: "04",
-    title: "Interactive 3D & AR",
-    body: "Real-time 3D experiences, interactive configurators, and augmented reality applications that turn viewers into participants.",
-    href: "/work#development",
-    mediaSlug: "explainer-configurator",
+    title: "XR · AR · VR",
+    body: "Spatial experiences for headsets and phones—AR overlays, VR presence, and XR prototypes that feel natural in three dimensions.",
+    href: "/work#xr",
+    mediaSlug: "explainer-app-animation",
   },
 ] as const;
 
 export const processSteps = [
   {
     index: "01",
-    title: "Discover",
-    body: "We define your vision, goals, visual references, and project requirements.",
+    title: "Scope",
+    body: "We lock the platform, success metrics, references, and constraints—Unity, Unreal, AI pipeline, or XR device targets.",
   },
   {
     index: "02",
-    title: "Create",
-    body: "I bring your idea to life through design, development, and carefully reviewed iterations.",
+    title: "Build",
+    body: "I prototype early, iterate in-engine or in-model, and keep demos reviewable so decisions stay fast and visible.",
   },
   {
     index: "03",
-    title: "Deliver",
-    body: "You receive organized, production-ready assets prepared for their intended platform and purpose.",
+    title: "Ship",
+    body: "You get a stable build, documented handoff, and assets organized for the next sprint—not a black-box dump.",
   },
 ] as const;
 
 /** Prefer named collaborations with project links; quotes flagged as unverified. */
 export const trustEvidenceSlugs = [
-  "character-anime",
-  "standalone-weapon",
+  "unity-unity-game",
+  "unreal-fantasy-castle",
   "explainer-app-animation",
 ] as const;
 
-export const HERO_FALLBACK_MEDIA = "/assets/3D/Cars/Porsche%20911%20Turbo%20CGI%20Animation.mp4";
+export const HERO_FALLBACK_MEDIA = "/assets/Untiy/Unity%20Game/Movie_002.mp4";

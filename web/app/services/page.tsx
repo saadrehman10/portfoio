@@ -1,8 +1,14 @@
+import Link from "next/link";
+import { UpworkHireLink } from "@/components/UpworkHireLink";
 import { readSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
 
-export const metadata = { title: "Services | Saad" };
+export const metadata = {
+  title: "Services | Saad ur Rehman",
+  description:
+    "Hire for Unity, Unreal Engine, AI/ML computer vision, XR (AR/VR), and 3D visualization.",
+};
 
 export default async function ServicesPage() {
   const { pages } = await readSiteConfig();
@@ -18,6 +24,7 @@ export default async function ServicesPage() {
           <p>{services.intro}</p>
         </div>
       </section>
+
       <section className="section" style={{ paddingTop: 12 }}>
         <div className="wrap service-grid">
           {offers.map((offer, index) => (
@@ -25,8 +32,30 @@ export default async function ServicesPage() {
               <p className="kicker">0{index + 1}</p>
               <h3>{offer.title}</h3>
               <p>{offer.detail}</p>
+              {offer.tools ? (
+                <p className="meta" style={{ marginTop: 14 }}>
+                  {offer.tools}
+                </p>
+              ) : null}
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section paper" style={{ textAlign: "center" }}>
+        <div className="wrap">
+          <h2 className="manifesto" style={{ fontSize: "clamp(28px, 4vw, 42px)" }}>
+            Ready to scope a build?
+          </h2>
+          <p style={{ maxWidth: 520, margin: "12px auto 24px" }}>
+            Bring the platform, timeline, and definition of done—I will come back with a clear first milestone.
+          </p>
+          <div className="hero-actions" style={{ justifyContent: "center" }}>
+            <UpworkHireLink className="pill solid">Hire Me on Upwork</UpworkHireLink>
+            <Link className="pill" href="/work">
+              See work
+            </Link>
+          </div>
         </div>
       </section>
     </main>

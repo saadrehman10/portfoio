@@ -4,7 +4,7 @@ import { readEditableSiteConfig } from "@/lib/site-config";
 
 export const instant = false;
 
-export const metadata = { title: "My Work Configuration | Admin" };
+export const metadata = { title: "Work page | Admin" };
 
 export default async function AdminConfigurationPage() {
   const [{ config }, rows] = await Promise.all([readEditableSiteConfig(), getAdminProjectRows()]);

@@ -1,11 +1,42 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { SiteConfigStore } from "@/lib/site-config-types";
 import type { FeaturedProjectPlacement } from "@/lib/cms/homepage-defaults";
+import type { ThemeColors, ThemePresetId } from "@/lib/themes";
+import {
+  THEME_PRESETS,
+  getPreset,
+  resolveThemeColors,
+  themeToCssVars,
+} from "@/lib/themes";
 
 type ProjectOption = { slug: string; title: string; cover: string; active: boolean };
-type SectionId = "hero" | "featured" | "expertise" | "process" | "trust" | "about" | "cta";
+type SectionId = "hero" | "featured" | "expertise" | "process" | "trust" | "about" | "cta" | "site";
+
+const COLOR_FIELDS: Array<{ key: keyof Omit<ThemeColors, "colorScheme">; label: string }> = [
+  { key: "bg", label: "Canvas / background" },
+  { key: "bgElevated", label: "Elevated surface" },
+  { key: "text", label: "Primary text" },
+  { key: "textSecondary", label: "Secondary text" },
+  { key: "border", label: "Border" },
+  { key: "accent", label: "Accent" },
+  { key: "accentDeep", label: "Accent deep" },
+];
+
+function isHexColor(value: string) {
+  return /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value.trim());
+}
+
+function applyLivePreview(colors: ThemeColors) {
+  if (typeof document === "undefined") return;
+  const root = document.documentElement;
+  const vars = themeToCssVars(colors) as Record<string, string>;
+  for (const [key, value] of Object.entries(vars)) {
+    if (key === "colorScheme") root.style.colorScheme = value;
+    else if (key.startsWith("--")) root.style.setProperty(key, value);
+  }
+}
 
 export function HomepageConfigManager({
   initialConfig,
@@ -23,6 +54,55 @@ export function HomepageConfigManager({
     () => projects.filter((project) => project.active),
     [projects],
   );
+
+  const resolvedColors = useMemo(
+    () => resolveThemeColors(config.global.themePreset, config.global.themeColors),
+    [config.global.themePreset, config.global.themeColors],
+  );
+
+  useEffect(() => {
+    if (section === "site") applyLivePreview(resolvedColors);
+  }, [resolvedColors, section]);
+
+  function updateGlobal<K extends keyof SiteConfigStore["global"]>(
+    key: K,
+    value: SiteConfigStore["global"][K],
+  ) {
+    setConfig((current) => ({
+      ...current,
+      global: { ...current.global, [key]: value },
+    }));
+  }
+
+  function selectPreset(presetId: ThemePresetId) {
+    if (presetId === "custom") {
+      updateGlobal("themePreset", "custom");
+      return;
+    }
+    const colors = { ...getPreset(presetId).colors };
+    setConfig((current) => ({
+      ...current,
+      global: {
+        ...current.global,
+        themePreset: presetId,
+        themeColors: colors,
+      },
+    }));
+  }
+
+  function updateThemeColor(key: keyof ThemeColors, value: string) {
+    setConfig((current) => ({
+      ...current,
+      global: {
+        ...current.global,
+        themePreset: "custom",
+        themeColors: {
+          ...current.global.themeColors,
+          [key]: value,
+        },
+      },
+    }));
+  }
 
   function updateHero<K extends keyof SiteConfigStore["homepage"]["hero"]>(
     key: K,
@@ -151,8 +231,7 @@ export function HomepageConfigManager({
         <div>
           <h1>Homepage</h1>
           <p className="meta">
-            Configure hero media, featured work chapters, expertise, process, trust, about teaser, and
-            final CTA.
+            Configure homepage sections, site title, footer, and color theme. Publish when ready.
           </p>
         </div>
         <div className="admin-quick-actions">
@@ -177,6 +256,7 @@ export function HomepageConfigManager({
             ["trust", "Client Trust"],
             ["about", "About"],
             ["cta", "Final CTA"],
+            ["site", "Site / theme"],
           ] as const
         ).map(([id, label]) => (
           <button
@@ -834,6 +914,132 @@ export function HomepageConfigManager({
               )}
             </label>
           ))}
+        </div>
+      )}
+
+      {section === "site" && (
+        <div className="admin-form-stack admin-form-stack-split">
+          <label>
+            Site title
+            <input
+              value={config.global.siteTitle}
+              onChange={(e) => updateGlobal("siteTitle", e.target.value)}
+            />
+          </label>
+          <label>
+            Upwork profile URL
+            <input
+              value={config.global.upworkUrl}
+              onChange={(e) => updateGlobal("upworkUrl", e.target.value)}
+            />
+          </label>
+
+          <h2 className="admin-subtitle admin-form-span-2">Footer</h2>
+          <label>
+            Footer label
+            <input
+              value={config.global.footerLabel}
+              onChange={(e) => updateGlobal("footerLabel", e.target.value)}
+            />
+          </label>
+          <label>
+            Footer headline
+            <input
+              value={config.global.footerHeadline}
+              onChange={(e) => updateGlobal("footerHeadline", e.target.value)}
+            />
+          </label>
+          <label className="admin-form-span-2">
+            Footer description
+            <textarea
+              rows={3}
+              value={config.global.footerDescription}
+              onChange={(e) => updateGlobal("footerDescription", e.target.value)}
+            />
+          </label>
+          <label className="admin-form-span-2">
+            Closing line
+            <input
+              value={config.global.footerTagline}
+              onChange={(e) => updateGlobal("footerTagline", e.target.value)}
+            />
+          </label>
+
+          <h2 className="admin-subtitle admin-form-span-2">Color theme</h2>
+          <div className="admin-theme-grid admin-form-span-2">
+            {THEME_PRESETS.map((preset) => (
+              <button
+                key={preset.id}
+                type="button"
+                className={`admin-theme-card${config.global.themePreset === preset.id ? " is-selected" : ""}`}
+                onClick={() => selectPreset(preset.id)}
+              >
+                <span className="admin-theme-swatches" aria-hidden>
+                  <span style={{ background: preset.colors.bg }} />
+                  <span style={{ background: preset.colors.bgElevated }} />
+                  <span style={{ background: preset.colors.text }} />
+                  <span style={{ background: preset.colors.accent }} />
+                </span>
+                <span className="admin-theme-card-copy">
+                  <strong>{preset.name}</strong>
+                  <span>{preset.description}</span>
+                </span>
+              </button>
+            ))}
+            <button
+              type="button"
+              className={`admin-theme-card${config.global.themePreset === "custom" ? " is-selected" : ""}`}
+              onClick={() => selectPreset("custom")}
+            >
+              <span className="admin-theme-swatches" aria-hidden>
+                <span style={{ background: resolvedColors.bg }} />
+                <span style={{ background: resolvedColors.bgElevated }} />
+                <span style={{ background: resolvedColors.text }} />
+                <span style={{ background: resolvedColors.accent }} />
+              </span>
+              <span className="admin-theme-card-copy">
+                <strong>Custom</strong>
+                <span>Edit any color below.</span>
+              </span>
+            </button>
+          </div>
+
+          <div className="admin-theme-colors admin-form-span-2">
+            {COLOR_FIELDS.map(({ key, label }) => {
+              const value = resolvedColors[key];
+              const hexForPicker = isHexColor(value) ? value : "#000000";
+              return (
+                <label key={key} className="admin-theme-color-field">
+                  <span>{label}</span>
+                  <span className="admin-theme-color-inputs">
+                    <input
+                      type="color"
+                      value={hexForPicker}
+                      onChange={(e) => updateThemeColor(key, e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      value={value}
+                      onChange={(e) => updateThemeColor(key, e.target.value)}
+                      spellCheck={false}
+                    />
+                  </span>
+                </label>
+              );
+            })}
+            <label className="admin-theme-color-field">
+              <span>Color scheme</span>
+              <select
+                value={resolvedColors.colorScheme}
+                onChange={(e) =>
+                  updateThemeColor("colorScheme", e.target.value as ThemeColors["colorScheme"])
+                }
+              >
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+              </select>
+            </label>
+          </div>
         </div>
       )}
     </div>

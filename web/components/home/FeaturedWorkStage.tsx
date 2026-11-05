@@ -162,12 +162,12 @@ export function FeaturedWorkStage({ chapters }: { chapters: FeaturedChapter[] })
   return (
     <section className="home-section home-featured" id="selected-work" aria-labelledby="selected-work-title">
       <div className="home-wrap home-section-intro">
-        <p className="home-eyebrow">Selected Work / 01</p>
+        <p className="home-eyebrow">Selected Work / 01 · Engines &amp; Intelligence</p>
         <h2 id="selected-work-title" className="manifesto home-section-title">
-          See the idea come to life.
+          Builds you can open and run.
         </h2>
         <p className="home-section-sub">
-          A closer look at projects where detail, motion, and interaction make the difference.
+          A closer look at Unity, Unreal, AI, and XR work where systems, space, and intelligence meet.
         </p>
       </div>
 

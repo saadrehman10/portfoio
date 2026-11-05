@@ -41,8 +41,8 @@ export function HomeExperience({
 
   const heroSrc =
     homepage.hero.mediaSrc ||
-    bySlug.get("product-animation-cars")?.cover ||
-    bySlug.get("hero-renders-cgi")?.cover ||
+    bySlug.get("unity-unity-game")?.cover ||
+    bySlug.get("unreal-fantasy-castle")?.cover ||
     chapters[0]?.project.cover ||
     HERO_FALLBACK_MEDIA;
 

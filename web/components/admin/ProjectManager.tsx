@@ -20,8 +20,24 @@ type ReviewOption = {
   projectSlug: string | null;
 };
 
+type MediaOption = {
+  src: string;
+  type: "image" | "video" | "embed";
+  label: string;
+  visible: boolean;
+};
+
 function isVideoSrc(src: string) {
   return /\.(mp4|webm|mov)(\?|$)/i.test(src);
+}
+
+function slugifyLocal(value: string) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80);
 }
 
 function MediaThumb({ src, className }: { src: string; className?: string }) {
@@ -57,34 +73,43 @@ export function ProjectManager({
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "hidden">("all");
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const [mediaLibrary, setMediaLibrary] = useState<MediaOption[]>([]);
+  const [showCreate, setShowCreate] = useState(false);
+  const [creating, setCreating] = useState(false);
+  const [createForm, setCreateForm] = useState({
+    title: "",
+    slug: "",
+    category: "unity" as ProjectCategory,
+    summary: "",
+    cover: "",
+    media: [] as string[],
+  });
 
   useEffect(() => {
     setHiddenMedia(new Set(initialHiddenMedia));
   }, [initialHiddenMedia]);
 
   useEffect(() => {
-    if (initialProjects) {
-      if (initialReviews.length) setReviews(initialReviews);
-      return;
-    }
     let cancelled = false;
     (async () => {
       const response = await fetch("/api/admin/projects");
       if (!response.ok) {
-        if (!cancelled) setLoadError("Could not load projects.");
+        if (!cancelled && !initialProjects) setLoadError("Could not load projects.");
         return;
       }
       const data = (await response.json()) as {
         projects: AdminProjectRow[];
         reviews?: ReviewOption[];
         hiddenMedia?: string[];
+        mediaLibrary?: MediaOption[];
       };
-      if (!cancelled) {
-        setRows(data.projects);
-        if (data.reviews) setReviews(data.reviews);
-        setHiddenMedia(new Set(data.hiddenMedia ?? []));
-        setReady(true);
-      }
+      if (cancelled) return;
+      if (!initialProjects) setRows(data.projects);
+      else if (data.projects) setRows(data.projects);
+      if (data.reviews) setReviews(data.reviews);
+      setHiddenMedia(new Set(data.hiddenMedia ?? []));
+      setMediaLibrary(data.mediaLibrary ?? []);
+      setReady(true);
     })();
     return () => {
       cancelled = true;
@@ -174,7 +199,13 @@ export function ProjectManager({
           title: row.title,
           summary: row.summary,
           role: row.role,
+          media: row.media,
           reviewIds: row.reviewIds,
+          pageHeadline: row.pageHeadline ?? "",
+          pageOverview: row.pageOverview ?? "",
+          storyBlocks: row.storyBlocks ?? [],
+          ctaLabel: row.ctaLabel ?? "",
+          isCustom: row.isCustom,
         })),
       }),
     });
@@ -187,7 +218,55 @@ export function ProjectManager({
     const data = (await response.json()) as { projects: AdminProjectRow[] };
     setRows(data.projects);
     router.refresh();
-    setMessage("Saved. Title, details, thumbnail, and review selections are live.");
+    setMessage("Saved. Project details, media, reviews, and page copy are live.");
+  }
+
+  async function createProject() {
+    setCreating(true);
+    setMessage("");
+    const response = await fetch("/api/admin/projects", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(createForm),
+    });
+    setCreating(false);
+    if (!response.ok) {
+      const body = (await response.json().catch(() => null)) as { error?: string } | null;
+      setMessage(body?.error ?? "Could not create project.");
+      return;
+    }
+    const data = (await response.json()) as { projects: AdminProjectRow[]; created?: { slug: string } };
+    setRows(data.projects);
+    setShowCreate(false);
+    setCreateForm({ title: "", slug: "", category: "unity", summary: "", cover: "", media: [] });
+    if (data.created?.slug) setExpandedSlug(data.created.slug);
+    router.refresh();
+    setMessage("Project created. Customize the page below, then save.");
+  }
+
+  async function removeCustom(slug: string) {
+    if (!window.confirm("Delete this custom project? This cannot be undone.")) return;
+    const response = await fetch(`/api/admin/projects?slug=${encodeURIComponent(slug)}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      setMessage("Could not delete project.");
+      return;
+    }
+    const data = (await response.json()) as { projects: AdminProjectRow[] };
+    setRows(data.projects);
+    setExpandedSlug(null);
+    router.refresh();
+    setMessage("Custom project deleted.");
+  }
+
+  function toggleCreateMedia(src: string) {
+    setCreateForm((current) => {
+      const exists = current.media.includes(src);
+      const media = exists ? current.media.filter((item) => item !== src) : [...current.media, src];
+      const cover = media.includes(current.cover) ? current.cover : media[0] ?? "";
+      return { ...current, media, cover };
+    });
   }
 
   return (
@@ -196,14 +275,134 @@ export function ProjectManager({
         <div>
           <h1>Projects</h1>
           <p className="meta">
-            Edit title, project details, thumbnail, category, visibility, and which client reviews
-            appear on each project page. Open a row with <strong>Edit</strong> to change content.
+            Create projects from media, attach client reviews, and customize each project page.
+            Open a row with <strong>Edit</strong> to change content.
           </p>
         </div>
-        <button type="button" className="pill solid" onClick={save} disabled={saving}>
-          {saving ? "Saving…" : "Save project changes"}
-        </button>
+        <div className="admin-quick-actions admin-panel-actions">
+          <button type="button" className="pill" onClick={() => setShowCreate((v) => !v)}>
+            {showCreate ? "Close create" : "Create project"}
+          </button>
+          <button type="button" className="pill solid" onClick={save} disabled={saving}>
+            {saving ? "Saving…" : "Save project changes"}
+          </button>
+        </div>
       </header>
+
+      {showCreate && (
+        <div className="admin-config-surface" style={{ marginBottom: 24 }}>
+          <h2 className="admin-subtitle" style={{ marginTop: 0 }}>
+            Create project from media
+          </h2>
+          <div className="admin-form-stack admin-form-stack-split">
+            <label>
+              Title
+              <input
+                value={createForm.title}
+                onChange={(e) => {
+                  const title = e.target.value;
+                  setCreateForm((current) => ({
+                    ...current,
+                    title,
+                    slug:
+                      current.slug && current.slug !== slugifyLocal(current.title)
+                        ? current.slug
+                        : slugifyLocal(title),
+                  }));
+                }}
+              />
+            </label>
+            <label>
+              Slug
+              <input
+                value={createForm.slug}
+                onChange={(e) => setCreateForm((current) => ({ ...current, slug: e.target.value }))}
+              />
+            </label>
+            <label>
+              Category
+              <select
+                value={createForm.category}
+                onChange={(e) =>
+                  setCreateForm((current) => ({
+                    ...current,
+                    category: e.target.value as ProjectCategory,
+                  }))
+                }
+              >
+                {categories.map((cat) => (
+                  <option key={cat.id} value={cat.id}>
+                    {cat.group} · {cat.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label className="admin-form-span-2">
+              Summary
+              <textarea
+                rows={3}
+                value={createForm.summary}
+                onChange={(e) => setCreateForm((current) => ({ ...current, summary: e.target.value }))}
+              />
+            </label>
+          </div>
+          <div className="admin-cover-picker" style={{ marginTop: 16 }}>
+            <h3 className="admin-config-kicker">Media from library</h3>
+            <p className="meta">Select files, then choose a cover. Hidden media cannot be selected.</p>
+            <div className="admin-cover-grid">
+              {mediaLibrary
+                .filter((asset) => asset.visible)
+                .slice(0, 48)
+                .map((asset) => {
+                  const selected = createForm.media.includes(asset.src);
+                  const isCover = createForm.cover === asset.src;
+                  return (
+                    <button
+                      key={asset.src}
+                      type="button"
+                      className={[
+                        "admin-cover-option",
+                        selected ? "is-selected" : "",
+                      ]
+                        .filter(Boolean)
+                        .join(" ")}
+                      onClick={() => toggleCreateMedia(asset.src)}
+                      onDoubleClick={() =>
+                        setCreateForm((current) =>
+                          current.media.includes(asset.src)
+                            ? { ...current, cover: asset.src }
+                            : current,
+                        )
+                      }
+                      title="Click to toggle · double-click selected to set cover"
+                    >
+                      <MediaThumb src={asset.src} className="admin-cover-option-media" />
+                      <span className="meta">
+                        {isCover ? "Cover" : selected ? "Selected" : asset.type}
+                      </span>
+                    </button>
+                  );
+                })}
+            </div>
+            {createForm.media.length > 0 && (
+              <p className="meta" style={{ marginTop: 10 }}>
+                {createForm.media.length} selected
+                {createForm.cover ? ` · cover set` : " · double-click one to set cover"}
+              </p>
+            )}
+          </div>
+          <div className="admin-quick-actions" style={{ marginTop: 16 }}>
+            <button
+              type="button"
+              className="pill solid"
+              disabled={creating || !createForm.title || !createForm.media.length || !createForm.cover}
+              onClick={createProject}
+            >
+              {creating ? "Creating…" : "Create project"}
+            </button>
+          </div>
+        </div>
+      )}
 
       <h2 className="admin-subtitle" style={{ marginTop: 8 }}>
         Visible by category
@@ -345,6 +544,11 @@ export function ProjectManager({
                     <Link className="pill" href={`/work/${row.slug}`} target="_blank">
                       View
                     </Link>
+                    {row.isCustom ? (
+                      <button type="button" className="pill" onClick={() => removeCustom(row.slug)}>
+                        Delete
+                      </button>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -372,6 +576,55 @@ export function ProjectManager({
                         rows={4}
                         value={row.summary}
                         onChange={(e) => updateRow(row.slug, { summary: e.target.value })}
+                      />
+                    </label>
+                    <label>
+                      Page headline
+                      <input
+                        value={row.pageHeadline ?? ""}
+                        placeholder={row.title}
+                        onChange={(e) => updateRow(row.slug, { pageHeadline: e.target.value })}
+                      />
+                    </label>
+                    <label>
+                      Hire CTA label
+                      <input
+                        value={row.ctaLabel ?? ""}
+                        placeholder="Hire Me on Upwork"
+                        onChange={(e) => updateRow(row.slug, { ctaLabel: e.target.value })}
+                      />
+                    </label>
+                    <label className="admin-form-span-2">
+                      Page overview
+                      <textarea
+                        rows={4}
+                        value={row.pageOverview ?? ""}
+                        placeholder="Longer case-study overview for the project page"
+                        onChange={(e) => updateRow(row.slug, { pageOverview: e.target.value })}
+                      />
+                    </label>
+                    <label className="admin-form-span-2">
+                      Story blocks (one per line as Title | Body)
+                      <textarea
+                        rows={5}
+                        value={(row.storyBlocks ?? [])
+                          .map((block) => `${block.title} | ${block.body}`)
+                          .join("\n")}
+                        placeholder={"Challenge | What we solved\nApproach | How we built it"}
+                        onChange={(e) => {
+                          const storyBlocks = e.target.value
+                            .split("\n")
+                            .map((line) => line.trim())
+                            .filter(Boolean)
+                            .map((line) => {
+                              const [title, ...rest] = line.split("|");
+                              return {
+                                title: (title ?? "").trim(),
+                                body: rest.join("|").trim(),
+                              };
+                            });
+                          updateRow(row.slug, { storyBlocks });
+                        }}
                       />
                     </label>
                   </div>

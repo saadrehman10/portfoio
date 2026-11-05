@@ -4,16 +4,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 const tabs = [
-  { href: "/admin/dashboard", label: "Overview", match: ["/admin/dashboard"] },
-  { href: "/admin/homepage", label: "Homepage", match: ["/admin/homepage"] },
-  { href: "/admin/configuration", label: "My Work", match: ["/admin/configuration"] },
+  { href: "/admin/media", label: "Media", match: ["/admin/media"] },
   { href: "/admin/projects", label: "Projects", match: ["/admin/projects"] },
-  { href: "/admin/reviews", label: "Reviews", match: ["/admin/reviews"] },
-  { href: "/admin/services", label: "Services", match: ["/admin/services"] },
-  { href: "/admin/about", label: "About", match: ["/admin/about"] },
-  { href: "/admin/contact", label: "Contact", match: ["/admin/contact"] },
-  { href: "/admin/media", label: "Media Library", match: ["/admin/media"] },
-  { href: "/admin/settings", label: "Global Settings", match: ["/admin/settings"] },
+  { href: "/admin/configuration", label: "Work page", match: ["/admin/configuration"] },
+  { href: "/admin/homepage", label: "Homepage", match: ["/admin/homepage"] },
 ];
 
 function isActive(pathname: string, match: string[]) {
@@ -51,7 +45,7 @@ export function AdminShell({
           </a>
           <a
             className="pill ghost-light"
-            href="https://zubarirali.3dverse.io/"
+            href="https://portfoio-seven-ashy.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
           >

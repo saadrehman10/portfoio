@@ -1,12 +1,5 @@
-export const instant = false;
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Analytics | Admin" };
-
-export default function AdminAnalyticsPage() {
-  return (
-    <div className="admin-panel">
-      <h1>Analytics</h1>
-      <p className="meta">Traffic and engagement metrics will be added here later.</p>
-    </div>
-  );
+export default function AdminAnalyticsRedirect() {
+  redirect("/admin/projects");
 }

@@ -21,7 +21,7 @@ export type WorkPageStore = {
   showLeadProject: boolean;
   /** Independent project rank per leaf category (slug order). */
   projectOrder: Partial<Record<ProjectCategory, string[]>>;
-  /** Per root-group intro copy (animation | renders | architectural | development). */
+  /** Per root-group intro copy (unity | unreal | ai | three-d | xr). */
   groupIntros: Record<string, string>;
   /** Per leaf category lead + description. */
   categoryMeta: Partial<Record<ProjectCategory, WorkCategoryMeta>>;
@@ -30,29 +30,51 @@ export type WorkPageStore = {
 export function buildDefaultWorkPage(): WorkPageStore {
   return {
     eyebrow: "SELECTED & COMPLETE WORK",
-    headline: "Work, made to be experienced.",
+    headline: "Work across engines, intelligence, and space.",
     introduction:
-      "Explore 3D animation, product imagery, architectural visualization, and interactive development. Every project is a different way of making an idea clearer, more engaging, or easier to explore.",
+      "Browse Unity and Unreal projects, AI / ML / computer-vision work, 3D visualization, and XR (AR / VR). Each piece is a different way of making software interactive, spatial, or smarter.",
     exploreLabel: "EXPLORE BY DISCIPLINE",
-    searchPlaceholder: "Search projects, clients, or skills",
-    emptyText: "No projects match these filters. Try a different category or search.",
-    ctaHeading: "Have something similar in mind?",
+    searchPlaceholder: "Search projects, platforms, or skills",
+    emptyText: "No projects match these filters. Try Unity, Unreal, AI, 3D, or XR.",
+    ctaHeading: "Building something in this stack?",
     ctaDescription:
-      "From a product visualization to an interactive experience, I can help turn your brief into a project worth exploring.",
+      "From a Unity prototype to an Unreal environment, an AI feature, or an XR demo—I can help turn the brief into a build you can run.",
     ctaPrimaryLabel: "Hire Me on Upwork",
     ctaPrimaryHref: UPWORK_PROFILE_URL,
     ctaSecondaryLabel: "Back to All Work",
     showLeadProject: true,
     projectOrder: {},
     groupIntros: {
-      animation: "From the first shape to the final frame. Character work, product animation, technical storytelling, and game-ready assets built with attention to form and motion.",
-      renders:
-        "Every surface has a story. Carefully composed CGI images for products, campaigns, and visual presentations, where lighting and material detail matter.",
-      architectural:
-        "Spaces before they exist. Interior, exterior, and spatial visualizations that help people understand a place, explore options, and imagine the result.",
-      development:
-        "Beyond looking. Into interacting. Unity, Unreal, AR/VR, and browser-based experiences that let users play, explore, configure, and learn.",
+      unity:
+        "Interactive systems in Unity—gameplay, tools, environments, and apps built for performance, iteration speed, and clean handoff.",
+      unreal:
+        "Unreal Engine worlds and real-time experiences—environments, lighting, and interactive scenes that hold up under review in-engine.",
+      ai: "AI, machine learning, and computer vision—pipelines and product features that see, decide, and assist inside real software.",
+      "three-d":
+        "3D art and visualization—models, look-dev, animation, and imagery that support games, products, and spatial storytelling.",
+      xr: "AR, VR, and XR—spatial experiences for headsets and mobile that put users inside the product, not just in front of a screen.",
     },
-    categoryMeta: {},
+    categoryMeta: {
+      unity: {
+        description: "Unity gameplay, tools, environments, and interactive applications.",
+        leadProjectSlug: "unity-unity-game",
+      },
+      unreal: {
+        description: "Unreal environments, cinematic real-time scenes, and interactive experiences.",
+        leadProjectSlug: "unreal-fantasy-castle",
+      },
+      ai: {
+        description: "AI / ML features and computer-vision workflows embedded in products.",
+        leadProjectSlug: "product-animation-ai-product",
+      },
+      "three-d": {
+        description: "3D modeling, visualization, animation, and look development.",
+        leadProjectSlug: "product-animation-cars",
+      },
+      xr: {
+        description: "Augmented, virtual, and extended reality experiences.",
+        leadProjectSlug: "explainer-app-animation",
+      },
+    },
   };
 }

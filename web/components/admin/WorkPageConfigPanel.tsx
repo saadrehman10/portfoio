@@ -27,7 +27,7 @@ export function WorkPageConfigPanel({
   projects: ProjectOption[];
 }) {
   const work = config.workPage;
-  const [selectedLeaf, setSelectedLeaf] = useState<ProjectCategory>("product-animation");
+  const [selectedLeaf, setSelectedLeaf] = useState<ProjectCategory>("unity");
 
   const leafProjects = projects
     .filter((project) => project.active && project.category === selectedLeaf)

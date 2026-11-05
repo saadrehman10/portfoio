@@ -7,6 +7,7 @@ import { UpworkHireLink } from "@/components/UpworkHireLink";
 const links = [
   { href: "/work", label: "work" },
   { href: "/services", label: "services" },
+  { href: "/experience", label: "experience" },
   { href: "/about", label: "about" },
   { href: "/contact", label: "contact" },
 ];

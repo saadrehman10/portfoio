@@ -20,10 +20,11 @@ type DashboardStats = {
   missingCovers: number;
   brokenFeatured: string[];
   categoryGroupCounts: {
-    animation: number;
-    renders: number;
-    architectural: number;
-    development: number;
+    unity: number;
+    unreal: number;
+    ai: number;
+    "three-d": number;
+    xr: number;
   };
 };
 
@@ -145,20 +146,24 @@ export function AdminDashboardView() {
       <h2 className="admin-subtitle">Work page groups</h2>
       <div className="admin-stat-grid">
         <article className="admin-stat">
-          <p className="kicker">3D Animation</p>
-          <p className="admin-stat-value">{stats.categoryGroupCounts.animation}</p>
+          <p className="kicker">Unity</p>
+          <p className="admin-stat-value">{stats.categoryGroupCounts.unity}</p>
         </article>
         <article className="admin-stat">
-          <p className="kicker">Renders</p>
-          <p className="admin-stat-value">{stats.categoryGroupCounts.renders}</p>
+          <p className="kicker">Unreal</p>
+          <p className="admin-stat-value">{stats.categoryGroupCounts.unreal}</p>
         </article>
         <article className="admin-stat">
-          <p className="kicker">Architectural</p>
-          <p className="admin-stat-value">{stats.categoryGroupCounts.architectural}</p>
+          <p className="kicker">AI</p>
+          <p className="admin-stat-value">{stats.categoryGroupCounts.ai}</p>
         </article>
         <article className="admin-stat">
-          <p className="kicker">Development</p>
-          <p className="admin-stat-value">{stats.categoryGroupCounts.development}</p>
+          <p className="kicker">3D</p>
+          <p className="admin-stat-value">{stats.categoryGroupCounts["three-d"]}</p>
+        </article>
+        <article className="admin-stat">
+          <p className="kicker">XR</p>
+          <p className="admin-stat-value">{stats.categoryGroupCounts.xr}</p>
         </article>
       </div>
 

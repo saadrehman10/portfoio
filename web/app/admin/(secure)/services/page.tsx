@@ -1,18 +1,5 @@
-import { PageConfigManager } from "@/components/admin/PageConfigManager";
-import { readEditableSiteConfig } from "@/lib/site-config";
+import { redirect } from "next/navigation";
 
-export const instant = false;
-
-export const metadata = { title: "Services | Admin" };
-
-export default async function AdminServicesPage() {
-  const { config } = await readEditableSiteConfig();
-  return (
-    <PageConfigManager
-      page="services"
-      title="Services page"
-      description="Manage service offers shown on /services without changing public visual design."
-      initialConfig={config}
-    />
-  );
+export default function AdminServicesRedirect() {
+  redirect("/admin/homepage");
 }

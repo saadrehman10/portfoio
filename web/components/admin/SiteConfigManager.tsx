@@ -290,7 +290,7 @@ export function SiteConfigManager({ initialConfig, projects = [] }: Props = {} a
     <div className="admin-panel">
       <header className="admin-panel-head">
         <div>
-          <h1>My Work</h1>
+          <h1>Work page</h1>
           <p className="meta">
             Control categories, work page order, and the shared 3D model viewer on{" "}
             <Link href="/work">/work</Link> and <Link href="/viewer">/viewer</Link>.

@@ -1,6 +1,6 @@
 [
   {
-    "category": "product-animation",
+    "category": "three-d",
     "slug": "product-animation-3d-product-gif",
     "title": "3D product GIF",
     "folder": "3D/3D product GIF",
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "category": "product-animation",
+    "category": "three-d",
     "slug": "product-animation-cars",
     "title": "Cars",
     "folder": "3D/Cars",
@@ -23,7 +23,7 @@
     ]
   },
   {
-    "category": "product-animation",
+    "category": "three-d",
     "slug": "product-animation-product-animation",
     "title": "Product animation",
     "folder": "3D/Product animation",
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "category": "product-animation",
+    "category": "three-d",
     "slug": "product-animation-organic",
     "title": "Organic",
     "folder": "3D/organic",
@@ -53,7 +53,7 @@
     ]
   },
   {
-    "category": "product-animation",
+    "category": "ai",
     "slug": "product-animation-ai-product",
     "title": "AI product",
     "folder": "AI/Product",
@@ -65,7 +65,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-anime",
     "title": "Anime",
     "folder": "3D/Anime_",
@@ -79,7 +79,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-character-animation",
     "title": "Character animation",
     "folder": "3D/character animation",
@@ -91,7 +91,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-robert-creatures",
     "title": "Robert creatures",
     "folder": "3D/Robert creatures",
@@ -106,7 +106,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-ryan-character",
     "title": "Ryan character",
     "folder": "3D/Ryan character Animation",
@@ -118,7 +118,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-thomas-bee",
     "title": "Thomas bee",
     "folder": "3D/Thomas bee",
@@ -142,7 +142,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-trey-anime-character",
     "title": "Trey anime character",
     "folder": "3D/Trey Anime character",
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-bird",
     "title": "Bird",
     "folder": "3D/Bird",
@@ -165,7 +165,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-mascot",
     "title": "Mascot",
     "folder": "Mascot",
@@ -185,7 +185,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-horseman",
     "title": "Horseman",
     "folder": "horseman-horse",
@@ -197,7 +197,7 @@
     ]
   },
   {
-    "category": "character",
+    "category": "three-d",
     "slug": "character-low-poly",
     "title": "Low poly",
     "folder": "Low poly",
@@ -209,7 +209,7 @@
     ]
   },
   {
-    "category": "installation",
+    "category": "three-d",
     "slug": "installation-event-visualization",
     "title": "Event visualization",
     "folder": "event visualization",
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "category": "installation",
+    "category": "three-d",
     "slug": "installation-industrial-visualization",
     "title": "Industrial visualization",
     "folder": "Industrial visualization",
@@ -232,7 +232,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "three-d",
     "slug": "explainer-blueprint-illustrator",
     "title": "Blueprint illustrator",
     "folder": "2d/Blueprint Illustrator",
@@ -245,7 +245,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "three-d",
     "slug": "explainer-process-explainer",
     "title": "Process explainer",
     "folder": "2d/explainer",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "xr",
     "slug": "explainer-app-animation",
     "title": "App animation",
     "folder": "3D/App Animation",
@@ -267,7 +267,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "three-d",
     "slug": "explainer-training-video",
     "title": "Training video",
     "folder": "3D/training video",
@@ -278,7 +278,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "three-d",
     "slug": "explainer-website-animation",
     "title": "Website animation",
     "folder": "3D/website animation",
@@ -289,7 +289,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "ai",
     "slug": "explainer-ai-website-animation",
     "title": "AI website animation",
     "folder": "AI/Website animation",
@@ -301,7 +301,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "xr",
     "slug": "explainer-configurator",
     "title": "Configurator",
     "folder": "Configurator",
@@ -313,7 +313,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "three-d",
     "slug": "explainer-jon",
     "title": "Jon",
     "folder": "Jon",
@@ -329,7 +329,7 @@
     ]
   },
   {
-    "category": "explainer",
+    "category": "three-d",
     "slug": "explainer-saas-films",
     "title": "SaaS films",
     "folder": "SaaS apple style video",
@@ -341,7 +341,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-beauty",
     "title": "Beauty",
     "folder": "3D/Product/Beauty",
@@ -355,7 +355,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-camera",
     "title": "Camera",
     "folder": "3D/Product/Camera",
@@ -373,7 +373,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-clothing",
     "title": "Clothing",
     "folder": "3D/Product/Clothing",
@@ -386,7 +386,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-coffe-maker",
     "title": "Coffe maker",
     "folder": "3D/Product/Coffe maker",
@@ -397,7 +397,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-golf-sumilator",
     "title": "Golf sumilator",
     "folder": "3D/Product/Golf sumilator",
@@ -408,7 +408,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-health-and-wellness",
     "title": "Health and wellness",
     "folder": "3D/Product/Health and wellness",
@@ -435,7 +435,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-iphone",
     "title": "Iphone",
     "folder": "3D/Product/Iphone",
@@ -446,7 +446,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-ring",
     "title": "Ring",
     "folder": "3D/Product/Ring",
@@ -457,7 +457,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-packaging",
     "title": "Packaging",
     "folder": "3D/Packaging",
@@ -468,7 +468,7 @@
     ]
   },
   {
-    "category": "product-renders",
+    "category": "three-d",
     "slug": "product-renders-sports",
     "title": "Sports",
     "folder": "Sports",
@@ -481,7 +481,7 @@
     ]
   },
   {
-    "category": "hero-renders",
+    "category": "three-d",
     "slug": "hero-renders-cgi",
     "title": "CGI",
     "folder": "3D/CGI",
@@ -494,7 +494,7 @@
     ]
   },
   {
-    "category": "hero-renders",
+    "category": "three-d",
     "slug": "hero-renders-jets",
     "title": "Jets",
     "folder": "3D/jets",
@@ -505,7 +505,7 @@
     ]
   },
   {
-    "category": "hero-renders",
+    "category": "three-d",
     "slug": "hero-renders-lighting-showcase",
     "title": "Lighting showcase",
     "folder": "3D/Lighting Showcase",
@@ -518,7 +518,7 @@
     ]
   },
   {
-    "category": "lifestyle-renders",
+    "category": "three-d",
     "slug": "lifestyle-renders-furniture",
     "title": "Furniture",
     "folder": "3D/Furniture",
@@ -533,7 +533,7 @@
     ]
   },
   {
-    "category": "lifestyle-renders",
+    "category": "three-d",
     "slug": "lifestyle-renders-luxury-bridal-boutique",
     "title": "Luxury bridal boutique",
     "folder": "3D/Luxury-Bridal-Boutique",
@@ -544,7 +544,7 @@
     ]
   },
   {
-    "category": "standalone",
+    "category": "three-d",
     "slug": "standalone-2d-environments",
     "title": "2D environments",
     "folder": "2d/environment",
@@ -556,7 +556,7 @@
     ]
   },
   {
-    "category": "standalone",
+    "category": "xr",
     "slug": "standalone-art-pieces",
     "title": "Art pieces",
     "folder": "3D/art pieces",
@@ -568,7 +568,7 @@
     ]
   },
   {
-    "category": "standalone",
+    "category": "three-d",
     "slug": "standalone-sculpture",
     "title": "Sculpture",
     "folder": "3D/Sculpture",
@@ -579,7 +579,7 @@
     ]
   },
   {
-    "category": "standalone",
+    "category": "three-d",
     "slug": "standalone-weapon",
     "title": "Weapon",
     "folder": "3D/Weapon",
@@ -590,7 +590,7 @@
     ]
   },
   {
-    "category": "interior-exterior",
+    "category": "three-d",
     "slug": "interior-exterior-interior-exterior",
     "title": "Interior + exterior",
     "folder": "3D/Exterior-Interior/Ex+In",
@@ -601,7 +601,7 @@
     ]
   },
   {
-    "category": "interior",
+    "category": "three-d",
     "slug": "interior-interior",
     "title": "Interior",
     "folder": "3D/Exterior-Interior/Interior",
@@ -615,7 +615,7 @@
     ]
   },
   {
-    "category": "interior",
+    "category": "three-d",
     "slug": "interior-game-room",
     "title": "Game room",
     "folder": "3D/Exterior-Interior/Game room",
@@ -631,7 +631,7 @@
     ]
   },
   {
-    "category": "exterior",
+    "category": "three-d",
     "slug": "exterior-exterior",
     "title": "Exterior",
     "folder": "3D/Exterior-Interior/Exterior",
@@ -647,7 +647,7 @@
     ]
   },
   {
-    "category": "arc-viz",
+    "category": "three-d",
     "slug": "arc-viz-oil-refinery-vessel",
     "title": "Oil refinery vessel",
     "folder": "3D/Oil Refinery Vessel",

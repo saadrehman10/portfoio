@@ -9,7 +9,7 @@ export const metadata = { title: "Admin | Saad" };
 
 export default async function AdminLoginPage() {
   if (await isAdminSession()) {
-    redirect("/admin/dashboard");
+    redirect("/admin/media");
   }
 
   return (

@@ -93,24 +93,58 @@ export type GlobalSiteSettings = {
   themeColors: ThemeColors;
 };
 
+export type SkillGroup = {
+  title: string;
+  items: string;
+};
+
 export type AboutPageStore = {
   eyebrow: string;
+  name: string;
   headline: string;
+  location: string;
   intro: string;
-  startTitle: string;
-  startBody: string;
-  finishTitle: string;
-  finishBody: string;
-  hireTitle: string;
-  hireBody: string;
-  editorialFlag: string;
+  objective: string;
+  skillGroups: SkillGroup[];
+  educationTitle: string;
+  educationPeriod: string;
+  educationSchool: string;
+  certificates: Array<{ title: string; detail: string }>;
+  ctaPrimaryLabel: string;
+  ctaPrimaryHref: string;
+  ctaSecondaryLabel: string;
+  ctaSecondaryHref: string;
+  /** @deprecated kept for older drafts */
+  startTitle?: string;
+  startBody?: string;
+  finishTitle?: string;
+  finishBody?: string;
+  hireTitle?: string;
+  hireBody?: string;
+  editorialFlag?: string;
 };
 
 export type ServicesPageStore = {
   eyebrow: string;
   headline: string;
   intro: string;
-  offers: Array<{ title: string; detail: string; enabled: boolean }>;
+  offers: Array<{ title: string; detail: string; tools?: string; enabled: boolean }>;
+};
+
+export type ExperienceJob = {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  summary: string;
+  bullets: string[];
+};
+
+export type ExperiencePageStore = {
+  eyebrow: string;
+  headline: string;
+  intro: string;
+  jobs: ExperienceJob[];
 };
 
 export type ContactPageStore = {
@@ -127,6 +161,7 @@ export type ContactPageStore = {
 export type PagesStore = {
   about: AboutPageStore;
   services: ServicesPageStore;
+  experience: ExperiencePageStore;
   contact: ContactPageStore;
 };
 
@@ -134,54 +169,170 @@ export function buildDefaultPages(): PagesStore {
   return {
     about: {
       eyebrow: "about",
-      headline: "a one-person studio for pictures that have to move.",
+      name: "Saad ur Rehman",
+      headline: "Game Developer · AR & VR · AI / Computer Vision",
+      location: "Karachi, Pakistan",
       intro:
-        "Saad makes 3D and motion for product brands, apps, and small studios. The work on this site is dummy layout content so the design can be reviewed before real projects go in.",
-      startTitle: "How jobs start",
-      startBody:
-        "A short brief, two references, and the place the file will live. That is enough to price a first round.",
-      finishTitle: "How jobs finish",
-      finishBody:
-        "Preview stills, one revision pass on the approved frames, then final exports for web and a master file.",
-      hireTitle: "Where to hire",
-      hireBody: "Upwork is the front door. Start a conversation with a clear brief and references.",
-      editorialFlag: "Needs editorial review: biography still contains placeholder wording.",
+        "I build immersive 2D/3D applications and simulations in Unity and Unreal Engine 5, and I develop computer-vision models that power real product features—not just demos.",
+      objective:
+        "AR/VR and game developer experienced in building immersive applications and simulations using Unity (AR Foundation, OpenXR) and Unreal Engine 5. Also experienced in developing and training AI models for computer vision—especially CNNs—including dataset preparation, model optimization, and evaluation for image classification and visual recognition.",
+      skillGroups: [
+        {
+          title: "Game engines",
+          items:
+            "Unity 3D (C#), Unreal Engine 5 (Blueprints), PlayCanvas, real-time rendering, lighting, physics",
+        },
+        {
+          title: "AR development",
+          items:
+            "Unity AR Foundation, Vuforia, ARCore, ARKit, DeepAR, OpenXR, geospatial anchors, image/object tracking, scene understanding",
+        },
+        {
+          title: "VR / XR",
+          items:
+            "Unreal VR template, Blueprint VR interactions, Meta Quest / HTC Vive, Unity XR Interaction Toolkit, LOD & level streaming, motion controllers, teleportation & smooth locomotion",
+        },
+        {
+          title: "AI & computer vision",
+          items:
+            "Python, OpenCV, NumPy, Pandas, PyTorch, TensorFlow/Keras, YOLO, object detection, classification, segmentation, data annotation & augmentation, ONNX",
+        },
+        {
+          title: "Mobile & web",
+          items: "Flutter (Dart), React, Next.js, Astro, Firebase, REST APIs, responsive UI, state management",
+        },
+        {
+          title: "Cloud & tools",
+          items:
+            "Firebase, AWS (EC2, S3), Supabase, n8n, Linux, Git/GitHub, Figma, Blender basics, Adobe Illustrator & Photoshop",
+        },
+      ],
+      educationTitle: "Bachelor of Science in Software Engineering",
+      educationPeriod: "Feb 2021 – Feb 2025",
+      educationSchool: "University of Karachi, Karachi",
+      certificates: [
+        {
+          title: "Game Development — LearnEasy.pk (Innovista)",
+          detail:
+            "Unity fundamentals, C# scripting, and 2D/3D game mechanics with playable project work.",
+        },
+        {
+          title: "Flutter Development — Hazza Institute of Technology",
+          detail: "Dart, widget-based UI, and Firebase-backed cross-platform apps.",
+        },
+        {
+          title: "Cloud Solution Architecture — Hazza Institute of Technology",
+          detail: "AWS services, Linux server management, and scalable cloud-native deployment.",
+        },
+        {
+          title: "MERN Stack Development — Saylani Mass IT Training",
+          detail: "MongoDB, Express, React, Node—full-stack apps and REST APIs.",
+        },
+      ],
+      ctaPrimaryLabel: "View experience",
+      ctaPrimaryHref: "/experience",
+      ctaSecondaryLabel: "Hire Me on Upwork",
+      ctaSecondaryHref: UPWORK_PROFILE_URL,
+      editorialFlag: "",
     },
     services: {
       eyebrow: "services",
-      headline: "what you can hire.",
-      intro: "Written the way an Upwork client scans a profile: outcome first, then the files they receive.",
+      headline: "what you can hire me for.",
+      intro:
+        "Outcome-first offerings for teams shipping games, XR products, intelligent vision features, and real-time 3D experiences.",
       offers: [
         {
-          title: "Product stills and turntables",
+          title: "Unity development",
           detail:
-            "One hero angle, three supporting angles, and a 4–6 second loop. Useful for Shopify, Amazon, and pitch decks.",
+            "2D/3D games, tools, UI, and interactive apps in Unity—built with C#, clear architecture, and mobile-ready performance.",
+          tools: "Unity 3D · C# · Physics · UI · Mobile builds",
           enabled: true,
         },
         {
-          title: "Character and mascot",
+          title: "Unreal Engine",
           detail:
-            "A model, a simple rig, and three poses or a short loop. Built so later shots stay on-model.",
+            "UE5 environments, cinematic lighting, Blueprint systems, and interactive experiences ready for in-engine review.",
+          tools: "Unreal Engine 5 · Blueprints · Real-time lighting · Level streaming",
           enabled: true,
         },
         {
-          title: "Spaces",
+          title: "AI / ML / computer vision",
           detail:
-            "Interior or exterior stills with lighting that matches the brand, not a default studio HDRI.",
+            "CNN pipelines for classification and recognition—dataset prep, training, evaluation, and integration into real apps.",
+          tools: "PyTorch · TensorFlow/Keras · OpenCV · YOLO · ONNX",
           enabled: true,
         },
         {
-          title: "Explainers and app motion",
+          title: "XR — AR / VR",
           detail:
-            "A short film or UI animation with a storyboard first, so the edit does not wander.",
+            "Marker-based and markerless AR, geospatial anchors, and VR simulations for Quest and Vive with solid interaction loops.",
+          tools: "AR Foundation · Vuforia · OpenXR · XR Toolkit · Meta Quest",
           enabled: true,
+        },
+        {
+          title: "3D visualization",
+          detail:
+            "Interactive walkthroughs, 360° tours, and spatial product storytelling that support games, real estate, and demos.",
+          tools: "Real-time rendering · Lighting · 3D UI · Spatial audio",
+          enabled: true,
+        },
+      ],
+    },
+    experience: {
+      eyebrow: "experience",
+      headline: "where the work got shipped.",
+      intro:
+        "Roles across game development, AR/VR production, and data systems—always focused on builds you can run and metrics you can trust.",
+      jobs: [
+        {
+          title: "Jr Game Developer",
+          company: "Techversol",
+          location: "Karachi, Pakistan · Full-time, Onsite",
+          period: "June 2025 – Present",
+          summary:
+            "Contributing to interactive 2D/3D games and immersive AR/VR applications in Unity and Unreal Engine. Previously Game Developer Intern (Apr 2025 – May 2025).",
+          bullets: [
+            "Developed and optimized 2D/3D games in Unity for mobile platforms.",
+            "Built AR apps in Unity and Unreal using marker-based, markerless, Google Cloud Anchors, and Geospatial Anchors.",
+            "Created VR simulations for Oculus Quest and HTC Vive with interactive environments.",
+            "Improved XR performance with level streaming and LOD systems.",
+            "Developing and training CNN-based computer vision models.",
+          ],
+        },
+        {
+          title: "Game Developer Intern",
+          company: "Linchpin Global",
+          location: "Karachi, Pakistan · Full-time, Onsite",
+          period: "Nov 2024 – Feb 2025",
+          summary:
+            "Focused on AR/VR for real estate visualization—Unity, Vuforia, XR Toolkit, and Unreal Engine 5 walkthroughs.",
+          bullets: [
+            "Built AR applications with marker-based and markerless tracking for real estate visualization.",
+            "Created immersive VR environments with Unity XR Toolkit and OpenXR for Quest and related headsets.",
+            "Built 360° virtual tours and interactive walkthroughs in Unreal Engine 5 with cinematic lighting and navigation.",
+            "Integrated interactive 3D models, UI, and spatial audio for stronger immersion.",
+          ],
+        },
+        {
+          title: "Data Automation & Reporting Specialist",
+          company: "Billing Expert",
+          location: "Pearland, USA · Full-time, Remote",
+          period: "Jan 2023 – Jan 2024",
+          summary:
+            "Automated reporting and dashboards for business operations—bridging data sources into decisions.",
+          bullets: [
+            "Designed and maintained interactive Power BI dashboards for key business metrics.",
+            "Automated data-entry workflows with Power Automate and n8n to cut manual errors.",
+            "Integrated Excel and SQL sources for real-time synchronization across platforms.",
+          ],
         },
       ],
     },
     contact: {
       eyebrow: "contact",
-      headline: "tell me the frame you need.",
-      intro: "The fastest way to start is on Upwork — share the brief, references, and timeline there.",
+      headline: "tell me what you're building.",
+      intro:
+        "The fastest path is Upwork—share platform, brief, references, and timeline. Unity, Unreal, AI/CV, 3D, or XR: start with the outcome.",
       formVisible: false,
       formNote: "",
       successMessage: "Message saved locally. This form does not send email yet.",
@@ -194,10 +345,10 @@ export function buildDefaultPages(): PagesStore {
 export function buildDefaultHomepage(): HomepageStore {
   return {
     hero: {
-      eyebrow: "Saad ur Rehman / 3D Artist & Interactive Developer",
-      headline: "3D that goes beyond the render.",
+      eyebrow: "Saad ur Rehman / Unity · Unreal · AI / ML · XR",
+      headline: "Real-time software. Intelligent systems.",
       description:
-        "I create product visuals, character animation, immersive spaces, and interactive 3D experiences—helping brands and teams turn ideas into something people can see, understand, and explore.",
+        "I build Unity and Unreal experiences, AI and computer-vision features, and XR products—helping teams ship interactive software that feels sharp in-engine and smart in production.",
       primaryCtaLabel: "Explore My Work",
       primaryCtaHref: "#selected-work",
       secondaryCtaLabel: "Hire Me on Upwork",
@@ -211,44 +362,44 @@ export function buildDefaultHomepage(): HomepageStore {
       mediaSrc: "",
     })),
     expertise: {
-      eyebrow: "What I Create / 02",
-      title: "The right visual for the right idea.",
+      eyebrow: "What I Build / 02",
+      title: "Engines, intelligence, and space.",
       description:
-        "From the first frame to the final interactive experience, I combine creativity and technology to bring complex ideas to life.",
+        "From Unity systems to Unreal worlds, from vision models to XR prototypes—I connect technical depth with experiences people can actually use.",
       items: expertiseItems.map((item) => ({ ...item, enabled: true })),
     },
     process: {
       eyebrow: "My Process / 03",
-      title: "From first idea to final frame.",
+      title: "From brief to build you can run.",
       description:
-        "Great results start with understanding the idea. I keep the process collaborative, focused, and clear from the first conversation to final delivery.",
+        "I keep milestones demoable. You see progress in the engine, in the model, or on device—not buried in slide decks.",
       steps: processSteps.map((step) => ({ ...step, enabled: true })),
     },
     trust: {
       eyebrow: "Client Trust / 04",
-      title: "The work matters. So does the experience.",
+      title: "Reliable delivery. Clear communication.",
       description:
-        "From first concept to final delivery, I focus on clear communication, thoughtful execution, and results clients feel confident sharing.",
+        "Clients hire me for focused execution—honest scoping, steady updates, and builds that survive review with their stakeholders.",
       support: "Feedback from real client projects.",
       enabled: true,
       reviewIds: ["r22", "r24", "r03", "r08", "r01", "r20", "r12", "r18"],
     },
     about: {
       eyebrow: "Behind the Work / 06",
-      title: "One creative partner. From concept to delivery.",
+      title: "One partner for engines and intelligence.",
       paragraph1:
-        "I'm Saad ur Rehman, a 3D artist and interactive developer working across product visualization, animation, digital environments, and real-time experiences.",
+        "I'm Saad ur Rehman—a Unity and Unreal developer working across real-time interactive software, AI/ML and computer vision, 3D pipelines, and XR.",
       paragraph2:
-        "I enjoy combining visual craftsmanship with technical problem-solving to create work that is not only beautiful but genuinely useful.",
+        "I like problems that need both systems thinking and visual judgment: shippable gameplay, spatial UX, and AI features that earn their place in the product.",
       ctaLabel: "More About Me",
       ctaHref: "/about",
     },
     finalCta: {
-      eyebrow: "Your Idea, Brought to Life / 05",
-      title: "Have an idea? Let's make it real.",
+      eyebrow: "Build With Me / 05",
+      title: "Need Unity, Unreal, AI, or XR?",
       description:
-        "Whether you need a standout product render, an engaging animation, or an interactive 3D experience, I'd love to hear what you're building.",
-      closing: "Let's turn your next idea into something people remember.",
+        "Whether you are shipping a game feature, an Unreal environment, a vision pipeline, or an AR/VR prototype—I can help you move from idea to runnable build.",
+      closing: "Let's make the next milestone something your team can open and trust.",
       primaryLabel: "Hire Me on Upwork",
       primaryHref: UPWORK_PROFILE_URL,
       secondaryLabel: "Explore All Work",
@@ -261,12 +412,12 @@ export function buildDefaultGlobal(): GlobalSiteSettings {
   const themePreset = DEFAULT_THEME_PRESET;
   return {
     upworkUrl: UPWORK_PROFILE_URL,
-    footerLabel: "Saad ur Rehman / Independent Creative",
-    footerHeadline: "Ideas deserve dimension.",
+    footerLabel: "Saad ur Rehman / Real-time & AI Developer",
+    footerHeadline: "Build what users can run.",
     footerDescription:
-      "I create 3D visuals, animation, and interactive experiences that turn ambitious ideas into something people can see, feel, and explore.",
-    footerTagline: "Made with imagination. Built with precision.",
-    siteTitle: "Saad ur Rehman | 3D Artist & Interactive Developer",
+      "Unity, Unreal, AI/ML, computer vision, 3D, and XR—interactive software and intelligent systems made for production, not just demos.",
+    footerTagline: "Engineered for play. Tuned for clarity.",
+    siteTitle: "Saad ur Rehman | Unity · Unreal · AI / ML · XR",
     themePreset,
     themeColors: { ...getPreset(themePreset).colors },
   };

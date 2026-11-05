@@ -36,12 +36,11 @@ export function buildDefaultSiteConfig(): SiteConfigStore {
   );
   const workGroups = categoryGroups.map((group) => ({ id: group.id, enabled: true }));
   const homeFeatured: OrderedToggle<ProjectCategory>[] = [
-    { id: "product-animation", enabled: true },
-    { id: "character", enabled: true },
-    { id: "lifestyle-renders", enabled: true },
-    { id: "exterior", enabled: true },
-    { id: "unreal", enabled: true },
     { id: "unity", enabled: true },
+    { id: "unreal", enabled: true },
+    { id: "ai", enabled: true },
+    { id: "three-d", enabled: true },
+    { id: "xr", enabled: true },
   ];
   for (const section of workSections) {
     if (!homeFeatured.some((item) => item.id === section.id)) {
@@ -175,8 +174,26 @@ function mergeHomepage(partial: Partial<HomepageStore> | undefined): HomepageSto
 function mergePages(partial: Partial<PagesStore> | undefined): PagesStore {
   const defaults = buildDefaultPages();
   if (!partial) return defaults;
+  const aboutPartial = partial.about;
   return {
-    about: { ...defaults.about, ...partial.about },
+    about: {
+      ...defaults.about,
+      ...aboutPartial,
+      skillGroups:
+        Array.isArray(aboutPartial?.skillGroups) && aboutPartial.skillGroups.length
+          ? aboutPartial.skillGroups.map((group, index) => ({
+              title: String(group.title ?? defaults.about.skillGroups[index]?.title ?? ""),
+              items: String(group.items ?? defaults.about.skillGroups[index]?.items ?? ""),
+            }))
+          : defaults.about.skillGroups,
+      certificates:
+        Array.isArray(aboutPartial?.certificates) && aboutPartial.certificates.length
+          ? aboutPartial.certificates.map((cert, index) => ({
+              title: String(cert.title ?? defaults.about.certificates[index]?.title ?? ""),
+              detail: String(cert.detail ?? defaults.about.certificates[index]?.detail ?? ""),
+            }))
+          : defaults.about.certificates,
+    },
     services: {
       ...defaults.services,
       ...partial.services,
@@ -184,9 +201,26 @@ function mergePages(partial: Partial<PagesStore> | undefined): PagesStore {
         ? partial.services.offers.map((offer, index) => ({
             ...defaults.services.offers[index],
             ...offer,
+            tools: String(offer.tools ?? defaults.services.offers[index]?.tools ?? ""),
             enabled: offer.enabled !== false,
           }))
         : defaults.services.offers,
+    },
+    experience: {
+      ...defaults.experience,
+      ...partial.experience,
+      jobs: partial.experience?.jobs?.length
+        ? partial.experience.jobs.map((job, index) => ({
+            title: String(job.title ?? defaults.experience.jobs[index]?.title ?? ""),
+            company: String(job.company ?? defaults.experience.jobs[index]?.company ?? ""),
+            location: String(job.location ?? defaults.experience.jobs[index]?.location ?? ""),
+            period: String(job.period ?? defaults.experience.jobs[index]?.period ?? ""),
+            summary: String(job.summary ?? defaults.experience.jobs[index]?.summary ?? ""),
+            bullets: Array.isArray(job.bullets)
+              ? job.bullets.map(String)
+              : defaults.experience.jobs[index]?.bullets ?? [],
+          }))
+        : defaults.experience.jobs,
     },
     contact: { ...defaults.contact, ...partial.contact },
   };

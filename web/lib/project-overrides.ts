@@ -4,6 +4,11 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import type { ProjectCategory } from "./content";
 
+export type ProjectStoryBlock = {
+  title: string;
+  body: string;
+};
+
 export type ProjectOverride = {
   active: boolean;
   category?: ProjectCategory;
@@ -12,11 +17,18 @@ export type ProjectOverride = {
   title?: string;
   summary?: string;
   role?: string;
+  /** Optional ordered media list (paths under /assets or /…). */
+  media?: string[];
   /**
    * Written review IDs to show on the project page.
    * Omit for automatic source mapping. Empty array hides written reviews.
    */
   reviewIds?: string[];
+  /** Per-project case-study page customization */
+  pageHeadline?: string;
+  pageOverview?: string;
+  storyBlocks?: ProjectStoryBlock[];
+  ctaLabel?: string;
 };
 
 export type ProjectOverridesStore = {

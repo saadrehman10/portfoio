@@ -1,9 +1,5 @@
-import { AdminDashboardView } from "@/components/admin/AdminDashboardView";
+import { redirect } from "next/navigation";
 
-export const instant = false;
-
-export const metadata = { title: "Dashboard | Admin" };
-
-export default function AdminDashboardPage() {
-  return <AdminDashboardView />;
+export default function AdminDashboardRedirect() {
+  redirect("/admin/projects");
 }

@@ -46,13 +46,29 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const group = categoryGroupFor(project.category);
   const clientInfo = getProjectClientInfo(slug);
   const { reviews, ratingOnly } = await getProjectPageReviews(slug);
-  const enrichment = enrichProjectFromSource(slug);
-  // Prefer admin-edited / published project summary; fall back to source excerpt only if needed.
+  const sourceEnrichment = enrichProjectFromSource(slug);
+  const { readProjectOverrides } = await import("@/lib/project-overrides");
+  const { overrides } = await readProjectOverrides();
+  const pageOverride = overrides[slug];
+  const enrichment = {
+    sourceIds: sourceEnrichment?.sourceIds ?? [],
+    cardExcerpt: sourceEnrichment?.cardExcerpt,
+    overview: pageOverride?.pageOverview?.trim() || sourceEnrichment?.overview,
+    storyBlocks:
+      pageOverride?.storyBlocks?.length
+        ? pageOverride.storyBlocks
+        : sourceEnrichment?.storyBlocks ?? [],
+    externalLinks: sourceEnrichment?.externalLinks ?? {},
+    reviewIds: sourceEnrichment?.reviewIds ?? [],
+  };
   const summary =
+    pageOverride?.pageOverview?.trim() ||
     project.summary?.trim() ||
-    enrichment?.cardExcerpt ||
-    enrichment?.overview ||
+    enrichment.cardExcerpt ||
+    enrichment.overview ||
     "";
+  const displayTitle = pageOverride?.pageHeadline?.trim() || project.title;
+  const hireLabel = pageOverride?.ctaLabel?.trim() || "Hire Me on Upwork";
   const related = projectsByCategoryList(
     allProjects,
     project.category,
@@ -85,7 +101,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <p className="kicker">
                 {group?.label ?? "Work"} / {sectionLabel}
               </p>
-              <h1 style={{ fontSize: "clamp(36px, 5.5vw, 64px)", marginTop: 12 }}>{project.title}</h1>
+              <h1 style={{ fontSize: "clamp(36px, 5.5vw, 64px)", marginTop: 12 }}>{displayTitle}</h1>
               <p style={{ marginTop: 16 }}>{summary}</p>
               <p className="meta">MY ROLE · {project.role}</p>
               <div className="chips">
@@ -97,7 +113,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
               <CaseStudyLinks enrichment={enrichment} />
               <div className="hero-actions" style={{ justifyContent: "flex-start" }}>
-                <UpworkHireLink className="pill solid">Hire Me on Upwork</UpworkHireLink>
+                <UpworkHireLink className="pill solid">{hireLabel}</UpworkHireLink>
                 <Link className="pill" href={`/work#${project.category}`}>
                   Back to {sectionLabel}
                 </Link>
@@ -132,10 +148,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="section paper">
         <div className="wrap" style={{ textAlign: "center" }}>
           <h2 className="manifesto" style={{ fontSize: "clamp(28px, 4vw, 42px)" }}>
-            Have a project like this in mind?
+            Building something in this stack?
           </h2>
           <p style={{ maxWidth: 520, margin: "12px auto 24px" }}>
-            Let&apos;s discuss how to bring it to life.
+            Unity, Unreal, AI/ML, 3D, or XR — let&apos;s scope a build you can run.
           </p>
           <UpworkHireLink className="pill solid">Hire Me on Upwork</UpworkHireLink>
         </div>

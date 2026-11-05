@@ -6,7 +6,7 @@ export function AboutTeaser({ content }: { content: HomepageStore["about"] }) {
     <section className="home-section home-about paper" id="behind-the-work" aria-labelledby="about-teaser-title">
       <div className="home-about-layout">
         <div className="home-about-mark" aria-hidden>
-          <span>ZA</span>
+          <span>SA</span>
         </div>
         <div>
           <p className="home-eyebrow">{content.eyebrow}</p>

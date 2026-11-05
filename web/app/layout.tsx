@@ -17,10 +17,10 @@ const display = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "Saad | 3D and motion for Upwork",
+  title: "Saad | Unity · Unreal · AI / ML · XR",
   description:
-    "Personal portfolio for a 3D and motion designer. Product films, characters, spaces, and explainers.",
-};
+    "Unity and Unreal developer specializing in AI/ML, computer vision, 3D pipelines, and XR (AR/VR) experiences.",
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

@@ -1,6 +1,8 @@
-import { getBaseProjects } from "@/lib/projects-base";
+import type { Project } from "@/lib/content";
+import { getBaseProjects, getBundledProjects } from "@/lib/projects-base";
 import { isEmbed, isVideo } from "@/lib/media";
 import { hiddenMediaSet, readMediaVisibility } from "@/lib/media-visibility";
+import type { CustomProjectRecord } from "@/lib/custom-projects";
 
 export type MediaAsset = {
   id: string;
@@ -12,11 +14,14 @@ export type MediaAsset = {
   visible: boolean;
 };
 
-export function buildMediaCatalog(hidden: Set<string> = new Set()): MediaAsset[] {
+export function buildMediaCatalog(
+  hidden: Set<string> = new Set(),
+  projects: Project[] = getBundledProjects(),
+): MediaAsset[] {
   const assets: MediaAsset[] = [];
   const seen = new Set<string>();
 
-  for (const project of getBaseProjects()) {
+  for (const project of projects) {
     for (const src of project.media) {
       if (seen.has(src)) continue;
       seen.add(src);
@@ -35,9 +40,12 @@ export function buildMediaCatalog(hidden: Set<string> = new Set()): MediaAsset[]
   return assets;
 }
 
-export async function buildMediaCatalogWithVisibility(): Promise<MediaAsset[]> {
+export async function buildMediaCatalogWithVisibility(
+  custom: CustomProjectRecord[] = [],
+): Promise<MediaAsset[]> {
   const store = await readMediaVisibility();
-  return buildMediaCatalog(hiddenMediaSet(store));
+  const projects = getBaseProjects(custom);
+  return buildMediaCatalog(hiddenMediaSet(store), projects);
 }
 
 export function mediaStats(assets: MediaAsset[] = buildMediaCatalog()) {

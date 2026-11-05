@@ -20,10 +20,10 @@ export default async function ReviewsPage() {
       <section className="page-hero">
         <div className="wrap">
           <p className="kicker">client feedback</p>
-          <h1>what clients said.</h1>
+          <h1>trusted on real builds.</h1>
           <p>
-            Written Upwork feedback associated with real contracts. Quotes are transcribed from studio
-            records; no public review permalink is claimed. Rating-only contracts are omitted here.
+            Written Upwork feedback from contracts spanning Unity, Unreal, interactive 3D, and related
+            delivery. Quotes are transcribed from studio records; rating-only contracts are omitted here.
           </p>
         </div>
       </section>
