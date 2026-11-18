@@ -1,6 +1,6 @@
 [
   {
-    "category": "three-d",
+    "category": "product-animation",
     "slug": "product-animation-3d-product-gif",
     "title": "3D product GIF",
     "folder": "3D/3D product GIF",
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-animation",
     "slug": "product-animation-cars",
     "title": "Cars",
     "folder": "3D/Cars",
@@ -23,7 +23,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-animation",
     "slug": "product-animation-product-animation",
     "title": "Product animation",
     "folder": "3D/Product animation",
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-animation",
     "slug": "product-animation-organic",
     "title": "Organic",
     "folder": "3D/organic",
@@ -53,7 +53,7 @@
     ]
   },
   {
-    "category": "ai",
+    "category": "product-animation",
     "slug": "product-animation-ai-product",
     "title": "AI product",
     "folder": "AI/Product",
@@ -65,7 +65,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-anime",
     "title": "Anime",
     "folder": "3D/Anime_",
@@ -79,7 +79,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-character-animation",
     "title": "Character animation",
     "folder": "3D/character animation",
@@ -91,7 +91,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-robert-creatures",
     "title": "Robert creatures",
     "folder": "3D/Robert creatures",
@@ -106,7 +106,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-ryan-character",
     "title": "Ryan character",
     "folder": "3D/Ryan character Animation",
@@ -118,7 +118,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-thomas-bee",
     "title": "Thomas bee",
     "folder": "3D/Thomas bee",
@@ -142,7 +142,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-trey-anime-character",
     "title": "Trey anime character",
     "folder": "3D/Trey Anime character",
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-bird",
     "title": "Bird",
     "folder": "3D/Bird",
@@ -165,7 +165,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-mascot",
     "title": "Mascot",
     "folder": "Mascot",
@@ -185,7 +185,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-horseman",
     "title": "Horseman",
     "folder": "horseman-horse",
@@ -197,7 +197,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "character",
     "slug": "character-low-poly",
     "title": "Low poly",
     "folder": "Low poly",
@@ -209,7 +209,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "installation",
     "slug": "installation-event-visualization",
     "title": "Event visualization",
     "folder": "event visualization",
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "installation",
     "slug": "installation-industrial-visualization",
     "title": "Industrial visualization",
     "folder": "Industrial visualization",
@@ -232,7 +232,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "explainer",
     "slug": "explainer-blueprint-illustrator",
     "title": "Blueprint illustrator",
     "folder": "2d/Blueprint Illustrator",
@@ -245,7 +245,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "explainer",
     "slug": "explainer-process-explainer",
     "title": "Process explainer",
     "folder": "2d/explainer",
@@ -256,7 +256,7 @@
     ]
   },
   {
-    "category": "xr",
+    "category": "explainer",
     "slug": "explainer-app-animation",
     "title": "App animation",
     "folder": "3D/App Animation",
@@ -267,7 +267,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "explainer",
     "slug": "explainer-training-video",
     "title": "Training video",
     "folder": "3D/training video",
@@ -278,7 +278,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "explainer",
     "slug": "explainer-website-animation",
     "title": "Website animation",
     "folder": "3D/website animation",
@@ -289,7 +289,7 @@
     ]
   },
   {
-    "category": "ai",
+    "category": "explainer",
     "slug": "explainer-ai-website-animation",
     "title": "AI website animation",
     "folder": "AI/Website animation",
@@ -301,7 +301,7 @@
     ]
   },
   {
-    "category": "xr",
+    "category": "explainer",
     "slug": "explainer-configurator",
     "title": "Configurator",
     "folder": "Configurator",
@@ -313,7 +313,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "explainer",
     "slug": "explainer-jon",
     "title": "Jon",
     "folder": "Jon",
@@ -329,7 +329,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "explainer",
     "slug": "explainer-saas-films",
     "title": "SaaS films",
     "folder": "SaaS apple style video",
@@ -341,7 +341,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-beauty",
     "title": "Beauty",
     "folder": "3D/Product/Beauty",
@@ -355,7 +355,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-camera",
     "title": "Camera",
     "folder": "3D/Product/Camera",
@@ -373,7 +373,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-clothing",
     "title": "Clothing",
     "folder": "3D/Product/Clothing",
@@ -386,7 +386,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-coffe-maker",
     "title": "Coffe maker",
     "folder": "3D/Product/Coffe maker",
@@ -397,7 +397,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-golf-sumilator",
     "title": "Golf sumilator",
     "folder": "3D/Product/Golf sumilator",
@@ -408,7 +408,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-health-and-wellness",
     "title": "Health and wellness",
     "folder": "3D/Product/Health and wellness",
@@ -435,7 +435,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-iphone",
     "title": "Iphone",
     "folder": "3D/Product/Iphone",
@@ -446,7 +446,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-ring",
     "title": "Ring",
     "folder": "3D/Product/Ring",
@@ -457,7 +457,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-packaging",
     "title": "Packaging",
     "folder": "3D/Packaging",
@@ -468,7 +468,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "product-renders",
     "slug": "product-renders-sports",
     "title": "Sports",
     "folder": "Sports",
@@ -481,7 +481,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "hero-renders",
     "slug": "hero-renders-cgi",
     "title": "CGI",
     "folder": "3D/CGI",
@@ -494,7 +494,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "hero-renders",
     "slug": "hero-renders-jets",
     "title": "Jets",
     "folder": "3D/jets",
@@ -505,7 +505,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "hero-renders",
     "slug": "hero-renders-lighting-showcase",
     "title": "Lighting showcase",
     "folder": "3D/Lighting Showcase",
@@ -518,7 +518,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "lifestyle-renders",
     "slug": "lifestyle-renders-furniture",
     "title": "Furniture",
     "folder": "3D/Furniture",
@@ -533,7 +533,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "lifestyle-renders",
     "slug": "lifestyle-renders-luxury-bridal-boutique",
     "title": "Luxury bridal boutique",
     "folder": "3D/Luxury-Bridal-Boutique",
@@ -544,7 +544,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "standalone",
     "slug": "standalone-2d-environments",
     "title": "2D environments",
     "folder": "2d/environment",
@@ -556,7 +556,7 @@
     ]
   },
   {
-    "category": "xr",
+    "category": "standalone",
     "slug": "standalone-art-pieces",
     "title": "Art pieces",
     "folder": "3D/art pieces",
@@ -568,7 +568,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "standalone",
     "slug": "standalone-sculpture",
     "title": "Sculpture",
     "folder": "3D/Sculpture",
@@ -579,7 +579,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "standalone",
     "slug": "standalone-weapon",
     "title": "Weapon",
     "folder": "3D/Weapon",
@@ -590,7 +590,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "interior-exterior",
     "slug": "interior-exterior-interior-exterior",
     "title": "Interior + exterior",
     "folder": "3D/Exterior-Interior/Ex+In",
@@ -601,7 +601,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "interior",
     "slug": "interior-interior",
     "title": "Interior",
     "folder": "3D/Exterior-Interior/Interior",
@@ -615,7 +615,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "interior",
     "slug": "interior-game-room",
     "title": "Game room",
     "folder": "3D/Exterior-Interior/Game room",
@@ -631,7 +631,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "exterior",
     "slug": "exterior-exterior",
     "title": "Exterior",
     "folder": "3D/Exterior-Interior/Exterior",
@@ -647,7 +647,7 @@
     ]
   },
   {
-    "category": "three-d",
+    "category": "arc-viz",
     "slug": "arc-viz-oil-refinery-vessel",
     "title": "Oil refinery vessel",
     "folder": "3D/Oil Refinery Vessel",
@@ -770,6 +770,41 @@
     "cover": "/assets/Unreal/enviornment/Michaela%20Enviornment/house/image%20(4).png",
     "media": [
       "/assets/Unreal/enviornment/Michaela%20Enviornment/house/image%20(4).png"
+    ]
+  },
+  {
+    "category": "unreal",
+    "slug": "unreal-rts-mayram",
+    "title": "RTS Mayram",
+    "folder": "Unreal/RTS_Mayram",
+    "summary": "Unreal Engine RTS prototype — Mayram. Gameplay capture plus in-engine screenshots.",
+    "cover": "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134609.png",
+    "media": [
+      "/assets/Unreal/RTS_Mayram/2026-10-15%2009-33-44.mp4",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131842.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131850.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131858.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131905.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131914.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131925.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131935.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20131946.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20132006.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134609.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134632.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134637.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134710.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134727.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134822.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134836.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20134929.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20135008.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20135229.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20135240.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20135416.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20135426.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20135437.png",
+      "/assets/Unreal/RTS_Mayram/Screenshot%202026-10-19%20135453.png"
     ]
   }
 ]

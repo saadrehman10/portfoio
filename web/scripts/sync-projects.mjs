@@ -88,6 +88,7 @@ const assignments = [
   ["unreal", "Castle interior", "Unreal/enviornment/Castle interior"],
   ["unreal", "Fantasy castle", "Unreal/enviornment/Fantasy Castle Environment"],
   ["unreal", "Michaela environment", "Unreal/enviornment/Michaela Enviornment"],
+  ["unreal", "RTS Mayram", "Unreal/RTS_Mayram"],
 ];
 
 function relUrl(absPath) {

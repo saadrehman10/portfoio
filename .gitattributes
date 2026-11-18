@@ -1,12 +1,6 @@
-# Git LFS — required: several videos exceed GitHub's 100MB limit
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.mov filter=lfs diff=lfs merge=lfs -text
-*.webm filter=lfs diff=lfs merge=lfs -text
-*.mkv filter=lfs diff=lfs merge=lfs -text
-*.avi filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.blend filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.hdr filter=lfs diff=lfs merge=lfs -text
-*.exr filter=lfs diff=lfs merge=lfs -text
+# Git LFS only for files that historically exceed GitHub's 100MB hard limit.
+# Prefer normal Git blobs for portfolio media so Vercel gets real files (not LFS pointers).
+Assets/Configurator/2026-05-19 23-40-10.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# New Unreal RTS Mayram assets: always store as normal Git files (no LFS)
+Assets/Unreal/RTS_Mayram/** filter= diff= merge= text=auto
